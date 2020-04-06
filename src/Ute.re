@@ -234,8 +234,7 @@ let deal = () => {
 //   }
 // };
 
-// used on prev console only project card 06
-// let impureGetRandomSeedUpTo60k = () => {
-//   let now = Js.Date.make();
-//   int_of_float((Js.Date.getSeconds(now) *. 1000.0) +. Js.Date.getMilliseconds(now));
-// };
+let impureGetRandomSeedUpTo60k = () => {
+  let now = Js.Date.make();
+  int_of_float((Js.Date.getSeconds(now) *. 1000.0) +. Js.Date.getMilliseconds(now));
+};

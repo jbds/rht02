@@ -512,6 +512,11 @@ function deal(param) {
   return /* () */0;
 }
 
+function impureGetRandomSeedUpTo60k(param) {
+  var now = new Date();
+  return now.getSeconds() * 1000.0 + now.getMilliseconds() | 0;
+}
+
 exports.orderedListOfCards = orderedListOfCards;
 exports.arrayOfCards = arrayOfCards;
 exports.suitToString = suitToString;
@@ -526,4 +531,5 @@ exports.setOfCardsDealerPlus2 = setOfCardsDealerPlus2;
 exports.setOfCardsDealerPlus3 = setOfCardsDealerPlus3;
 exports.setOfCardsDealerPlus0 = setOfCardsDealerPlus0;
 exports.deal = deal;
+exports.impureGetRandomSeedUpTo60k = impureGetRandomSeedUpTo60k;
 /* arrayOfCards Not a pure module */

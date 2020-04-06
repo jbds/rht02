@@ -25,9 +25,7 @@ let reducer = (state, action) =>
         (4, "9S"),
         ...state.cardsDealerPlus0, ]}
       | LogToConsole => {
-          Ute.deal();
-          let result = Array.map(Ute.cardToString, Ute.setOfCardsDealerPlus1);
-          Js.log(result);
+          let () = Shuffle.impureShuffleOfPack();
           // return the current state unchanged
           state;
       }
