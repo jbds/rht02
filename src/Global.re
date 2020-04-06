@@ -3,7 +3,8 @@ type state = {
 };
 
 type action =
-  | AddItem;
+  | AddItem
+  | LogToConsole;
 
 let reducer = (state, action) =>
   {
@@ -23,5 +24,12 @@ let reducer = (state, action) =>
         (3, "QH"),
         (4, "9S"),
         ...state.cardsDealerPlus0, ]}
+      | LogToConsole => {
+          Ute.deal();
+          let result = Array.map(Ute.cardToString, Ute.setOfCardsDealerPlus1);
+          Js.log(result);
+          // return the current state unchanged
+          state;
+      }
     }
   };

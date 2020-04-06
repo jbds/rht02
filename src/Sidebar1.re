@@ -16,5 +16,18 @@ let make = (~dispatch: Global.action => unit) => {
     >
       (s2e("Test"))
     </button>
+    <button 
+    onClick=((_e) => dispatch(LogToConsole)) //Js.log("Cicked LogToConsole"))//
+    style=(
+      ReactDOMRe.Style.make(
+        ~color={"Green"}, 
+        ~fontSize={"3vh"},
+        ~marginTop={"1vh"},
+        ()
+      )
+    )
+    >
+      (s2e("Log to Console"))
+    </button>
   </div>
 };

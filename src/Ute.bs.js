@@ -512,27 +512,6 @@ function deal(param) {
   return /* () */0;
 }
 
-function displaySetOfCardsOnConsole(arr, suitAsString) {
-  var l = $$Array.to_list(arr);
-  if (l) {
-    var hd = l[0];
-    var remainder = displaySetOfCardsOnConsole($$Array.of_list(l[1]), suitToStringUnicode(hd[1]));
-    var match = suitAsString === suitToStringUnicode(hd[1]);
-    if (match) {
-      return rankToString(hd[0]) + (" " + remainder);
-    } else {
-      return "  " + (suitToStringUnicode(hd[1]) + (" " + (rankToString(hd[0]) + (" " + remainder))));
-    }
-  } else {
-    return "";
-  }
-}
-
-function impureGetRandomSeedUpTo60k(param) {
-  var now = new Date();
-  return now.getSeconds() * 1000.0 + now.getMilliseconds() | 0;
-}
-
 exports.orderedListOfCards = orderedListOfCards;
 exports.arrayOfCards = arrayOfCards;
 exports.suitToString = suitToString;
@@ -547,6 +526,4 @@ exports.setOfCardsDealerPlus2 = setOfCardsDealerPlus2;
 exports.setOfCardsDealerPlus3 = setOfCardsDealerPlus3;
 exports.setOfCardsDealerPlus0 = setOfCardsDealerPlus0;
 exports.deal = deal;
-exports.displaySetOfCardsOnConsole = displaySetOfCardsOnConsole;
-exports.impureGetRandomSeedUpTo60k = impureGetRandomSeedUpTo60k;
 /* arrayOfCards Not a pure module */

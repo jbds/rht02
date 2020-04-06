@@ -19,7 +19,16 @@ function Sidebar1(Props) {
                   onClick: (function (_e) {
                       return Curry._1(dispatch, /* AddItem */0);
                     })
-                }, "Test"));
+                }, "Test"), React.createElement("button", {
+                  style: {
+                    color: "Green",
+                    fontSize: "3vh",
+                    marginTop: "1vh"
+                  },
+                  onClick: (function (_e) {
+                      return Curry._1(dispatch, /* LogToConsole */1);
+                    })
+                }, "Log to Console"));
 }
 
 var make = Sidebar1;

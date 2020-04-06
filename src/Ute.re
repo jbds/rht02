@@ -216,22 +216,26 @@ let deal = () => {
   }
 };
 
-let rec displaySetOfCardsOnConsole = (arr, suitAsString) => {
-  let l = Array.to_list(arr);
-  switch l {
-  | [] => ""
-  | [hd, ...tl] => {
-      let remainder = displaySetOfCardsOnConsole(Array.of_list(tl), suitToStringUnicode(snd(hd)));
-      suitAsString == suitToStringUnicode(snd(hd)) 
-      ?
-      rankToString(fst(hd)) ++ " " ++ remainder
-      :
-      "  " ++ suitToStringUnicode(snd(hd)) ++ " " ++ rankToString(fst(hd)) ++ " " ++ remainder
-    }
-  }
-};
 
-let impureGetRandomSeedUpTo60k = () => {
-  let now = Js.Date.make();
-  int_of_float((Js.Date.getSeconds(now) *. 1000.0) +. Js.Date.getMilliseconds(now));
-};
+
+// used on prev console only project card06 
+// let rec displaySetOfCardsOnConsole = (arr, suitAsString) => {
+//   let l = Array.to_list(arr);
+//   switch l {
+//   | [] => ""
+//   | [hd, ...tl] => {
+//       let remainder = displaySetOfCardsOnConsole(Array.of_list(tl), suitToStringUnicode(snd(hd)));
+//       suitAsString == suitToStringUnicode(snd(hd)) 
+//       ?
+//       rankToString(fst(hd)) ++ " " ++ remainder
+//       :
+//       "  " ++ suitToStringUnicode(snd(hd)) ++ " " ++ rankToString(fst(hd)) ++ " " ++ remainder
+//     }
+//   }
+// };
+
+// used on prev console only project card 06
+// let impureGetRandomSeedUpTo60k = () => {
+//   let now = Js.Date.make();
+//   int_of_float((Js.Date.getSeconds(now) *. 1000.0) +. Js.Date.getMilliseconds(now));
+// };
