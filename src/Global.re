@@ -1,3 +1,10 @@
+type cardCollection = {
+  dealerPlus1: array((int, string)),
+  dealerPlus2: array((int, string)),
+  dealerPlus3: array((int, string)),
+  dealerPlus0: array((int, string)),
+};
+
 type state = {
   cardsDealerPlus0: list((int, string))
 };
@@ -25,7 +32,8 @@ let reducer = (state, action) =>
         (4, "9S"),
         ...state.cardsDealerPlus0, ]}
       | LogToConsole => {
-          let () = Shuffle.impureShuffleOfPack();
+          let fourSetsOfCards = Shuffle.impureShuffleOfPack();
+          Js.log(fourSetsOfCards);
           // return the current state unchanged
           state;
       }

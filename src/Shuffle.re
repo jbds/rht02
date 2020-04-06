@@ -1,4 +1,6 @@
 open Ute;
+open Global;
+
 let impureShuffleOfPack = () =>
 {
   /* impure! */
@@ -27,17 +29,31 @@ let impureShuffleOfPack = () =>
   // a function expecting a single tuple param
   //Js.log(Array.map(cardToValue(denomination), setOfCardsDealerPlus1));
   // to work with filenames this cannot use the unicode symbols
-  Js.log(Array.map(cardToString, setOfCardsDealerPlus1)); 
-  Js.log(Array.map(cardToString, setOfCardsDealerPlus2)); 
-  Js.log(Array.map(cardToString, setOfCardsDealerPlus3)); 
-  Js.log(Array.map(cardToString, setOfCardsDealerPlus0)); 
+  // Js.log(Array.map(cardToString, setOfCardsDealerPlus1)); 
+  // Js.log(Array.map(cardToString, setOfCardsDealerPlus2)); 
+  // Js.log(Array.map(cardToString, setOfCardsDealerPlus3)); 
+  // Js.log(Array.map(cardToString, setOfCardsDealerPlus0)); 
 
-  // used on previous console project card06
-  // recursive function requires initial suitAsString=""
-  // Js.log(displaySetOfCardsOnConsole(setOfCardsDealerPlus1, ""));
-  // Js.log(displaySetOfCardsOnConsole(setOfCardsDealerPlus2, ""));
-  // Js.log(displaySetOfCardsOnConsole(setOfCardsDealerPlus3, ""));
-  //Js.log(displaySetOfCardsOnConsole(setOfCardsDealerPlus0, ""));
+  let setOfCardsAsStringDealerPlus1 = Array.map(cardToString, setOfCardsDealerPlus1);
+  let setOfCardsAsStringDealerPlus2 = Array.map(cardToString, setOfCardsDealerPlus2);
+  let setOfCardsAsStringDealerPlus3 = Array.map(cardToString, setOfCardsDealerPlus3);
+  let setOfCardsAsStringDealerPlus0 = Array.map(cardToString, setOfCardsDealerPlus0);
+
+  let setOfCardsWithIndexDealerPlus1 = Array.mapi((k, v) => (k, v), setOfCardsAsStringDealerPlus1);
+  let setOfCardsWithIndexDealerPlus2 = Array.mapi((k, v) => (k, v), setOfCardsAsStringDealerPlus2);
+  let setOfCardsWithIndexDealerPlus3 = Array.mapi((k, v) => (k, v), setOfCardsAsStringDealerPlus3);
+  let setOfCardsWithIndexDealerPlus0 = Array.mapi((k, v) => (k, v), setOfCardsAsStringDealerPlus0);
+
+
+  //Js.log(setOfCardsWithIndexDealerPlus1);
+
+  // return the four sets of cards as one record aka object
+  {
+    dealerPlus1:  setOfCardsWithIndexDealerPlus1, 
+    dealerPlus2: setOfCardsWithIndexDealerPlus2, 
+    dealerPlus3: setOfCardsWithIndexDealerPlus3, 
+    dealerPlus0: setOfCardsWithIndexDealerPlus0, 
+  };
 };
 
 

@@ -20,11 +20,40 @@ function impureShuffleOfPack(param) {
   $$Array.sort((function (param, param$1) {
           return Ute$ReactHooksTemplate.compareCardValue(/* NO_TRUMPS */0, param, param$1);
         }), Ute$ReactHooksTemplate.setOfCardsDealerPlus0);
-  console.log($$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus1));
-  console.log($$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus2));
-  console.log($$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus3));
-  console.log($$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus0));
-  return /* () */0;
+  var setOfCardsAsStringDealerPlus1 = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus1);
+  var setOfCardsAsStringDealerPlus2 = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus2);
+  var setOfCardsAsStringDealerPlus3 = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus3);
+  var setOfCardsAsStringDealerPlus0 = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus0);
+  var setOfCardsWithIndexDealerPlus1 = $$Array.mapi((function (k, v) {
+          return /* tuple */[
+                  k,
+                  v
+                ];
+        }), setOfCardsAsStringDealerPlus1);
+  var setOfCardsWithIndexDealerPlus2 = $$Array.mapi((function (k, v) {
+          return /* tuple */[
+                  k,
+                  v
+                ];
+        }), setOfCardsAsStringDealerPlus2);
+  var setOfCardsWithIndexDealerPlus3 = $$Array.mapi((function (k, v) {
+          return /* tuple */[
+                  k,
+                  v
+                ];
+        }), setOfCardsAsStringDealerPlus3);
+  var setOfCardsWithIndexDealerPlus0 = $$Array.mapi((function (k, v) {
+          return /* tuple */[
+                  k,
+                  v
+                ];
+        }), setOfCardsAsStringDealerPlus0);
+  return /* record */[
+          /* dealerPlus1 */setOfCardsWithIndexDealerPlus1,
+          /* dealerPlus2 */setOfCardsWithIndexDealerPlus2,
+          /* dealerPlus3 */setOfCardsWithIndexDealerPlus3,
+          /* dealerPlus0 */setOfCardsWithIndexDealerPlus0
+        ];
 }
 
 exports.impureShuffleOfPack = impureShuffleOfPack;

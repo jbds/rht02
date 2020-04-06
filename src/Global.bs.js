@@ -5,7 +5,8 @@ var Shuffle$ReactHooksTemplate = require("./Shuffle.bs.js");
 
 function reducer(state, action) {
   if (action) {
-    Shuffle$ReactHooksTemplate.impureShuffleOfPack(/* () */0);
+    var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(/* () */0);
+    console.log(fourSetsOfCards);
     return state;
   } else {
     return /* record */[/* cardsDealerPlus0 : :: */[
