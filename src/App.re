@@ -1,3 +1,5 @@
+open Global;
+
 let s2e = React.string;
 
 [@react.component]
@@ -6,9 +8,12 @@ let make = () => {
   // useReducer expects to have passed in a reducer function and an initial state
   let ({Global.cardsDealerPlus0}, dispatch) = React.useReducer(
   Global.reducer,
-  // here is the initial state, an empty list
+  // here is the initial state, a record of empty arrays
   {
-    cardsDealerPlus0: []
+    dealerPlus1: [||],
+    dealerPlus2: [||],
+    dealerPlus3: [||],
+    dealerPlus0: [||]
   });
 
   //let cardsDealerPlus0Qty = List.length(cardsDealerPlus0);
@@ -17,8 +22,7 @@ let make = () => {
     <div>
       (
         React.array(
-          Array.of_list(
-            List.map(
+            Array.map(
               ((index, filePath)) => 
               <PlayingCardRotatable 
                 key={string_of_int(index)}
@@ -30,9 +34,8 @@ let make = () => {
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
               />
               , 
-              cardsDealerPlus0
+              dealerPlus1
             )
-          )
         )
       ) 
     </div>   

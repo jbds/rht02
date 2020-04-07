@@ -6,7 +6,7 @@ type cardCollection = {
 };
 
 type state = {
-  cardsDealerPlus0: list((int, string))
+  cardCollection
 };
 
 type action =
@@ -16,7 +16,7 @@ type action =
 let reducer = (state, action) =>
   {
     switch action {
-      | AddItem => {cardsDealerPlus0: [
+      | AddItem => {cardCollection: [
         (-8, "2S"),
         (-7, "TC"),
         (-6, "AC"),
@@ -30,7 +30,7 @@ let reducer = (state, action) =>
         (2, "5C"),
         (3, "QH"),
         (4, "9S"),
-        ...state.cardsDealerPlus0, ]}
+        ...state.cardCollection, ]}
       | LogToConsole => {
           let fourSetsOfCards = Shuffle.impureShuffleOfPack();
           Js.log(fourSetsOfCards);
