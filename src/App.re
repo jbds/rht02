@@ -1,7 +1,6 @@
-open Global;
 
 let s2e = React.string;
-let initialState = {dealerPlus1: [||], dealerPlus2: [||], dealerPlus3: [||], dealerPlus0: [||]};
+let initialState: Shuffle.state = {dealerPlus1: [||], dealerPlus2: [||], dealerPlus3: [||], dealerPlus0: [||]};
 
 [@react.component]
 let make = () => {
@@ -28,6 +27,66 @@ let make = () => {
               />
               , 
               state.dealerPlus1
+            )
+        )
+      ) 
+    </div>   
+    <div>
+      (
+        React.array(
+            Array.map(
+              ((index, filePath)) => 
+              <PlayingCardRotatable 
+                key={string_of_int(index)}
+                cardIndex=index
+                filePath={"./images/" ++ filePath ++ ".svg"}
+                leftVw=25.0
+                topVh=50.0
+                parentElementWidthPx={[%raw {| window.innerWidth |}]} 
+                parentElementHeightPx={[%raw {| window.innerHeight |}]}
+              />
+              , 
+              state.dealerPlus2
+            )
+        )
+      ) 
+    </div>   
+    <div>
+      (
+        React.array(
+            Array.map(
+              ((index, filePath)) => 
+              <PlayingCardRotatable 
+                key={string_of_int(index)}
+                cardIndex=index
+                filePath={"./images/" ++ filePath ++ ".svg"}
+                leftVw=50.0
+                topVh=25.0
+                parentElementWidthPx={[%raw {| window.innerWidth |}]} 
+                parentElementHeightPx={[%raw {| window.innerHeight |}]}
+              />
+              , 
+              state.dealerPlus3
+            )
+        )
+      ) 
+    </div>  
+    <div>
+      (
+        React.array(
+            Array.map(
+              ((index, filePath)) => 
+              <PlayingCardRotatable 
+                key={string_of_int(index)}
+                cardIndex=index
+                filePath={"./images/" ++ filePath ++ ".svg"}
+                leftVw=75.0
+                topVh=50.0
+                parentElementWidthPx={[%raw {| window.innerWidth |}]} 
+                parentElementHeightPx={[%raw {| window.innerHeight |}]}
+              />
+              , 
+              state.dealerPlus0
             )
         )
       ) 

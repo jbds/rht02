@@ -28,6 +28,7 @@ var initialState = /* record */[
 
 function App(Props) {
   var match = React.useReducer(Global$ReactHooksTemplate.reducer, initialState);
+  var state = match[0];
   return React.createElement("div", {
               id: "main"
             }, React.createElement("div", undefined, $$Array.map((function (param) {
@@ -41,7 +42,40 @@ function App(Props) {
                                     parentElementHeightPx: ( window.innerHeight ),
                                     key: String(index)
                                   });
-                      }), match[0][/* dealerPlus1 */0])), React.createElement("div", {
+                      }), state[/* dealerPlus1 */0])), React.createElement("div", undefined, $$Array.map((function (param) {
+                        var index = param[0];
+                        return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
+                                    cardIndex: index,
+                                    filePath: "./images/" + (param[1] + ".svg"),
+                                    leftVw: 25.0,
+                                    topVh: 50.0,
+                                    parentElementWidthPx: ( window.innerWidth ),
+                                    parentElementHeightPx: ( window.innerHeight ),
+                                    key: String(index)
+                                  });
+                      }), state[/* dealerPlus2 */1])), React.createElement("div", undefined, $$Array.map((function (param) {
+                        var index = param[0];
+                        return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
+                                    cardIndex: index,
+                                    filePath: "./images/" + (param[1] + ".svg"),
+                                    leftVw: 50.0,
+                                    topVh: 25.0,
+                                    parentElementWidthPx: ( window.innerWidth ),
+                                    parentElementHeightPx: ( window.innerHeight ),
+                                    key: String(index)
+                                  });
+                      }), state[/* dealerPlus3 */2])), React.createElement("div", undefined, $$Array.map((function (param) {
+                        var index = param[0];
+                        return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
+                                    cardIndex: index,
+                                    filePath: "./images/" + (param[1] + ".svg"),
+                                    leftVw: 75.0,
+                                    topVh: 50.0,
+                                    parentElementWidthPx: ( window.innerWidth ),
+                                    parentElementHeightPx: ( window.innerHeight ),
+                                    key: String(index)
+                                  });
+                      }), state[/* dealerPlus0 */3])), React.createElement("div", {
                   style: {
                     left: "50%",
                     position: "absolute",
