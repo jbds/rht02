@@ -7,7 +7,7 @@ function reducer(state, action) {
   if (action) {
     var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(/* () */0);
     console.log(fourSetsOfCards);
-    return state;
+    return fourSetsOfCards;
   } else {
     return state;
   }

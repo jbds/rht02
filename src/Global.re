@@ -17,8 +17,8 @@ let reducer = (state, action) =>
       | LogToConsole => {
           let fourSetsOfCards = Shuffle.impureShuffleOfPack();
           Js.log(fourSetsOfCards);
-          // return the current state unchanged
-          state;
+          // return the merged state
+          fourSetsOfCards;
       }
     }
   };

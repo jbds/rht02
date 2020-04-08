@@ -27,7 +27,7 @@ let make = () => {
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
               />
               , 
-              dealerPlus1
+              state.dealerPlus1
             )
         )
       ) 
