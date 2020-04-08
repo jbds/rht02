@@ -1,5 +1,12 @@
 open Ute;
-open Global;
+
+type state = {
+  dealerPlus1: array((int, string)),
+  dealerPlus2: array((int, string)),
+  dealerPlus3: array((int, string)),
+  dealerPlus0: array((int, string)),
+};
+
 
 let impureShuffleOfPack = () =>
 {
@@ -49,7 +56,7 @@ let impureShuffleOfPack = () =>
 
   // return the four sets of cards as one record aka object
   {
-    dealerPlus1:  setOfCardsWithIndexDealerPlus1, 
+    dealerPlus1: setOfCardsWithIndexDealerPlus1, 
     dealerPlus2: setOfCardsWithIndexDealerPlus2, 
     dealerPlus3: setOfCardsWithIndexDealerPlus3, 
     dealerPlus0: setOfCardsWithIndexDealerPlus0, 

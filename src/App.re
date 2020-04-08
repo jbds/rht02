@@ -1,20 +1,13 @@
 open Global;
 
 let s2e = React.string;
+let initialState = {dealerPlus1: [||], dealerPlus2: [||], dealerPlus3: [||], dealerPlus0: [||]};
 
 [@react.component]
 let make = () => {
   // 'dispatch' will not change between re-renders
   // useReducer expects to have passed in a reducer function and an initial state
-  let ({Global.cardsDealerPlus0}, dispatch) = React.useReducer(
-  Global.reducer,
-  // here is the initial state, a record of empty arrays
-  {
-    dealerPlus1: [||],
-    dealerPlus2: [||],
-    dealerPlus3: [||],
-    dealerPlus0: [||]
-  });
+  let (state, dispatch) = React.useReducer(Global.reducer, initialState);
 
   //let cardsDealerPlus0Qty = List.length(cardsDealerPlus0);
   
