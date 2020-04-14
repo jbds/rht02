@@ -59,32 +59,32 @@ let orderedListOfCards = [
   (Four, Hearts),
   (Three, Hearts),
   (Two, Hearts),
-  (Ace, Diamonds),
-  (King, Diamonds),
-  (Queen, Diamonds),
-  (Jack, Diamonds),
-  (Ten,Diamonds),
-  (Nine, Diamonds),
-  (Eight,Diamonds),
-  (Seven,Diamonds),
-  (Six, Diamonds),
-  (Five, Diamonds),
-  (Four, Diamonds),
-  (Three, Diamonds),
-  (Two, Diamonds),
-  (Ace, Clubs), 
+  (Ace, Clubs),
   (King, Clubs),
   (Queen, Clubs),
   (Jack, Clubs),
-  (Ten, Clubs), 
+  (Ten,Clubs),
   (Nine, Clubs),
-  (Eight, Clubs),
-  (Seven, Clubs), 
+  (Eight,Clubs),
+  (Seven,Clubs),
   (Six, Clubs),
   (Five, Clubs),
   (Four, Clubs),
   (Three, Clubs),
   (Two, Clubs),
+  (Ace, Diamonds), 
+  (King, Diamonds),
+  (Queen, Diamonds),
+  (Jack, Diamonds),
+  (Ten, Diamonds), 
+  (Nine, Diamonds),
+  (Eight, Diamonds),
+  (Seven, Diamonds), 
+  (Six, Diamonds),
+  (Five, Diamonds),
+  (Four, Diamonds),
+  (Three, Diamonds),
+  (Two, Diamonds),
 ];
 
 /* mutable */
@@ -150,10 +150,10 @@ let cardToValue(gameDenomination, playingCard) = {
     | (Spades, _) => 42
     | (Hearts, SUIT(Hearts)) => 56
     | (Hearts, _) => 28
-    | (Diamonds, SUIT(Diamonds)) => 56
-    | (Diamonds, _) => 14
     | (Clubs, SUIT(Clubs)) => 56
-    | (Clubs, _) => 0
+    | (Clubs, _) => 14
+    | (Diamonds, SUIT(Diamonds)) => 56
+    | (Diamonds, _) => 0
     | (NoSuit, _) => -14
     }
   };
