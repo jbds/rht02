@@ -1,12 +1,10 @@
-
-let s2e = React.string;
-let initialState: Shuffle.state = {dealerPlus1: [||], dealerPlus2: [||], dealerPlus3: [||], dealerPlus0: [||]};
+open Global;
 
 [@react.component]
 let make = () => {
   // 'dispatch' will not change between re-renders
   // useReducer expects to have passed in a reducer function and an initial state
-  let (state, dispatch) = React.useReducer(Global.reducer, initialState);
+  let (state, dispatch) = React.useReducer(reducer, initialState);
 
   //let cardsDealerPlus0Qty = List.length(cardsDealerPlus0);
   

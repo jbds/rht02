@@ -3,6 +3,25 @@
 
 var Shuffle$ReactHooksTemplate = require("./Shuffle.bs.js");
 
+function s2e(prim) {
+  return prim;
+}
+
+var initialState_dealerPlus1 = [];
+
+var initialState_dealerPlus2 = [];
+
+var initialState_dealerPlus3 = [];
+
+var initialState_dealerPlus0 = [];
+
+var initialState = {
+  dealerPlus1: initialState_dealerPlus1,
+  dealerPlus2: initialState_dealerPlus2,
+  dealerPlus3: initialState_dealerPlus3,
+  dealerPlus0: initialState_dealerPlus0
+};
+
 function reducer(state, action) {
   if (!action) {
     return state;
@@ -12,5 +31,7 @@ function reducer(state, action) {
   return fourSetsOfCards;
 }
 
+exports.s2e = s2e;
+exports.initialState = initialState;
 exports.reducer = reducer;
 /* Shuffle-ReactHooksTemplate Not a pure module */

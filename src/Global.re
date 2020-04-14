@@ -1,3 +1,5 @@
+// state and reducer are used by the top level component App
+
 type state = {
   dealerPlus1: array((int, string)),
   dealerPlus2: array((int, string)),
@@ -8,6 +10,17 @@ type state = {
 type action =
   | AddItem
   | LogToConsole;
+
+// utility
+let s2e = React.string;
+
+// force to type Shuffle.state
+let initialState: Shuffle.state = {
+  dealerPlus1: [||], 
+  dealerPlus2: [||], 
+  dealerPlus3: [||], 
+  dealerPlus0: [||]
+};
 
 let reducer = (state, action) =>
   {

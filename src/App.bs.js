@@ -7,27 +7,8 @@ var Global$ReactHooksTemplate = require("./Global.bs.js");
 var Sidebar1$ReactHooksTemplate = require("./Sidebar1.bs.js");
 var PlayingCardRotatable$ReactHooksTemplate = require("./PlayingCardRotatable.bs.js");
 
-function s2e(prim) {
-  return prim;
-}
-
-var initialState_dealerPlus1 = [];
-
-var initialState_dealerPlus2 = [];
-
-var initialState_dealerPlus3 = [];
-
-var initialState_dealerPlus0 = [];
-
-var initialState = {
-  dealerPlus1: initialState_dealerPlus1,
-  dealerPlus2: initialState_dealerPlus2,
-  dealerPlus3: initialState_dealerPlus3,
-  dealerPlus0: initialState_dealerPlus0
-};
-
 function App(Props) {
-  var match = React.useReducer(Global$ReactHooksTemplate.reducer, initialState);
+  var match = React.useReducer(Global$ReactHooksTemplate.reducer, Global$ReactHooksTemplate.initialState);
   var state = match[0];
   return React.createElement("div", {
               id: "main"
@@ -81,38 +62,36 @@ function App(Props) {
                     position: "absolute",
                     top: "15%"
                   }
-                }, "N"), React.createElement("div", {
+                }, Global$ReactHooksTemplate.s2e("N")), React.createElement("div", {
                   style: {
                     left: "50%",
                     position: "absolute",
                     top: "85%"
                   }
-                }, "S"), React.createElement("div", {
+                }, Global$ReactHooksTemplate.s2e("S")), React.createElement("div", {
                   style: {
                     left: "15%",
                     position: "absolute",
                     top: "50%"
                   }
-                }, "W"), React.createElement("div", {
+                }, Global$ReactHooksTemplate.s2e("W")), React.createElement("div", {
                   style: {
                     left: "85%",
                     position: "absolute",
                     top: "50%"
                   }
-                }, "E"), React.createElement("div", {
+                }, Global$ReactHooksTemplate.s2e("E")), React.createElement("div", {
                   id: "sidebar1"
                 }, React.createElement(Sidebar1$ReactHooksTemplate.make, {
                       dispatch: match[1]
                     })), React.createElement("div", {
                   id: "sidebar2"
-                }, "Sidebar2"), React.createElement("div", {
+                }, Global$ReactHooksTemplate.s2e("Sidebar2")), React.createElement("div", {
                   id: "sidebar3"
-                }, "Sidebar3"));
+                }, Global$ReactHooksTemplate.s2e("Sidebar3")));
 }
 
 var make = App;
 
-exports.s2e = s2e;
-exports.initialState = initialState;
 exports.make = make;
 /* react Not a pure module */
