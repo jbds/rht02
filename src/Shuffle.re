@@ -5,6 +5,10 @@ type state = {
   dealerPlus2: array((int, string)),
   dealerPlus3: array((int, string)),
   dealerPlus0: array((int, string)),
+  plus1IsFlipped: bool,
+  plus2IsFlipped: bool,
+  plus3IsFlipped: bool,
+  plus0IsFlipped: bool,
 };
 
 
@@ -60,6 +64,10 @@ let impureShuffleOfPack = () =>
     dealerPlus2: setOfCardsWithIndexDealerPlus2, 
     dealerPlus3: setOfCardsWithIndexDealerPlus3, 
     dealerPlus0: setOfCardsWithIndexDealerPlus0, 
+    plus1IsFlipped: true,
+    plus2IsFlipped: true,
+    plus3IsFlipped: true,
+    plus0IsFlipped: true,
   };
 };
 

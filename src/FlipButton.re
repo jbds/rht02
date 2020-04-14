@@ -4,7 +4,7 @@ let s2e = React.string;
 let make = (~dispatch: Global.action => unit, ~location: string) => {
   <div>
     <button 
-    onClick=((_e) =>  Js.log("Flip action trace location: " ++ location))//dispatch(Action1)) //Js.log("Cicked Test"))//dispatch(Action1))
+    onClick=((_e) =>  dispatch(Flip (location))) //Js.log("Flip action trace location: " ++ location))
     style=(
       ReactDOMRe.Style.make(
         ~color={"Black"}, 

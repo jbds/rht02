@@ -52,7 +52,11 @@ function impureShuffleOfPack(param) {
           dealerPlus1: setOfCardsWithIndexDealerPlus1,
           dealerPlus2: setOfCardsWithIndexDealerPlus2,
           dealerPlus3: setOfCardsWithIndexDealerPlus3,
-          dealerPlus0: setOfCardsWithIndexDealerPlus0
+          dealerPlus0: setOfCardsWithIndexDealerPlus0,
+          plus1IsFlipped: true,
+          plus2IsFlipped: true,
+          plus3IsFlipped: true,
+          plus0IsFlipped: true
         };
 }
 

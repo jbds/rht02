@@ -16,6 +16,7 @@ let make = () => {
                 topVh=75.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
+                isFlipSide=false
               />
     </div>   
     <div>
@@ -27,18 +28,29 @@ let make = () => {
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
+                isFlipSide=false
               />
     </div>   
     <div>
+      (
+        React.array(
+          Array.map(
+            ((index, filePath)) =>
               <PlayingCardRotatable 
-                key={string_of_int(0)}
-                cardIndex=0
-                filePath={"./images/" ++ "1B" ++ ".svg"}
+                key={string_of_int(index)}
+                cardIndex=index
+                filePath={"./images/" ++ filePath ++ ".svg"}
                 leftVw=50.0
                 topVh=25.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
+                isFlipSide=state.plus0IsFlipped
               />
+              ,
+              state.dealerPlus3
+          )
+        )
+      )
     </div>  
     <div>
               <PlayingCardRotatable 
@@ -49,6 +61,7 @@ let make = () => {
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
+                isFlipSide=false
               />
     </div>   
     <div

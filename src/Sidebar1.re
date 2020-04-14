@@ -17,7 +17,7 @@ let make = (~dispatch: Global.action => unit) => {
       (s2e("Action1"))
     </button>
     <button 
-    onClick=((_e) => dispatch(LogToConsole)) //Js.log("Cicked LogToConsole"))//
+    onClick=((_e) => dispatch(Action2)) //Js.log("Cicked LogToConsole"))//
     style=(
       ReactDOMRe.Style.make(
         ~color={"Green"}, 

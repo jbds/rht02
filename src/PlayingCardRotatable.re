@@ -19,6 +19,7 @@ let make =
     ~topVh: float, 
     ~parentElementWidthPx: float, 
     ~parentElementHeightPx: float,
+    ~isFlipSide: bool,
   ) 
 => 
 {
@@ -32,9 +33,11 @@ let make =
   let transformA = "translate(" ++ f2s(cardHalfWidthPx) ++ "px, " ++ f2s(-.cardHalfWidthPx *. rotationOriginYOffsetMultiplier) ++ "px)";
   let transformB = "rotate(" ++ f2s(angleDeg *. (float_of_int(cardIndex) -. cardIndexOffset)) ++ "deg)";
   let transformC = "translate(" ++ f2s(-.cardHalfWidthPx) ++ "px, " ++ f2s(cardHalfWidthPx *. rotationOriginYOffsetMultiplier) ++ "px)";
+  // decide whether to show upside or flipside
+  let adjustedFilePath = isFlipSide ? "./images/1B.svg" : filePath;
   // position absolute is misleading/irrelevant, because we are using vw and vh units for left and top placement
   <img 
-    src={filePath} 
+    src={adjustedFilePath} 
     style=(
       ReactDOMRe.Style.make(
         ~height={f2s(cardHeightVh) ++ "vh"}, 
