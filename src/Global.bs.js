@@ -4,13 +4,12 @@
 var Shuffle$ReactHooksTemplate = require("./Shuffle.bs.js");
 
 function reducer(state, action) {
-  if (action) {
-    var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(/* () */0);
-    console.log(fourSetsOfCards);
-    return fourSetsOfCards;
-  } else {
+  if (!action) {
     return state;
   }
+  var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(undefined);
+  console.log(fourSetsOfCards);
+  return fourSetsOfCards;
 }
 
 exports.reducer = reducer;

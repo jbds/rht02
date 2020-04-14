@@ -11,20 +11,20 @@ function s2e(prim) {
   return prim;
 }
 
-var initialState_000 = /* dealerPlus1 : array */[];
+var initialState_dealerPlus1 = [];
 
-var initialState_001 = /* dealerPlus2 : array */[];
+var initialState_dealerPlus2 = [];
 
-var initialState_002 = /* dealerPlus3 : array */[];
+var initialState_dealerPlus3 = [];
 
-var initialState_003 = /* dealerPlus0 : array */[];
+var initialState_dealerPlus0 = [];
 
-var initialState = /* record */[
-  initialState_000,
-  initialState_001,
-  initialState_002,
-  initialState_003
-];
+var initialState = {
+  dealerPlus1: initialState_dealerPlus1,
+  dealerPlus2: initialState_dealerPlus2,
+  dealerPlus3: initialState_dealerPlus3,
+  dealerPlus0: initialState_dealerPlus0
+};
 
 function App(Props) {
   var match = React.useReducer(Global$ReactHooksTemplate.reducer, initialState);
@@ -38,44 +38,44 @@ function App(Props) {
                                     filePath: "./images/" + (param[1] + ".svg"),
                                     leftVw: 50.0,
                                     topVh: 75.0,
-                                    parentElementWidthPx: ( window.innerWidth ),
-                                    parentElementHeightPx: ( window.innerHeight ),
+                                    parentElementWidthPx: window.innerWidth,
+                                    parentElementHeightPx: window.innerHeight,
                                     key: String(index)
                                   });
-                      }), state[/* dealerPlus1 */0])), React.createElement("div", undefined, $$Array.map((function (param) {
+                      }), state.dealerPlus1)), React.createElement("div", undefined, $$Array.map((function (param) {
                         var index = param[0];
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                                     cardIndex: index,
                                     filePath: "./images/" + (param[1] + ".svg"),
                                     leftVw: 25.0,
                                     topVh: 50.0,
-                                    parentElementWidthPx: ( window.innerWidth ),
-                                    parentElementHeightPx: ( window.innerHeight ),
+                                    parentElementWidthPx: window.innerWidth,
+                                    parentElementHeightPx: window.innerHeight,
                                     key: String(index)
                                   });
-                      }), state[/* dealerPlus2 */1])), React.createElement("div", undefined, $$Array.map((function (param) {
+                      }), state.dealerPlus2)), React.createElement("div", undefined, $$Array.map((function (param) {
                         var index = param[0];
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                                     cardIndex: index,
                                     filePath: "./images/" + (param[1] + ".svg"),
                                     leftVw: 50.0,
                                     topVh: 25.0,
-                                    parentElementWidthPx: ( window.innerWidth ),
-                                    parentElementHeightPx: ( window.innerHeight ),
+                                    parentElementWidthPx: window.innerWidth,
+                                    parentElementHeightPx: window.innerHeight,
                                     key: String(index)
                                   });
-                      }), state[/* dealerPlus3 */2])), React.createElement("div", undefined, $$Array.map((function (param) {
+                      }), state.dealerPlus3)), React.createElement("div", undefined, $$Array.map((function (param) {
                         var index = param[0];
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                                     cardIndex: index,
                                     filePath: "./images/" + (param[1] + ".svg"),
                                     leftVw: 75.0,
                                     topVh: 50.0,
-                                    parentElementWidthPx: ( window.innerWidth ),
-                                    parentElementHeightPx: ( window.innerHeight ),
+                                    parentElementWidthPx: window.innerWidth,
+                                    parentElementHeightPx: window.innerHeight,
                                     key: String(index)
                                   });
-                      }), state[/* dealerPlus0 */3])), React.createElement("div", {
+                      }), state.dealerPlus0)), React.createElement("div", {
                   style: {
                     left: "50%",
                     position: "absolute",

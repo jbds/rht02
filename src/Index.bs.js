@@ -5,7 +5,7 @@ var React = require("react");
 var ReactDOMRe = require("reason-react/src/ReactDOMRe.js");
 var App$ReactHooksTemplate = require("./App.bs.js");
 
- window.onresize = forceGlobalReRender 
+window.onresize = forceGlobalReRender
 ;
 
 function forceGlobalReRender(param) {
@@ -13,7 +13,7 @@ function forceGlobalReRender(param) {
   return ReactDOMRe.renderToElementWithId(React.createElement(App$ReactHooksTemplate.make, { }), "root");
 }
 
-forceGlobalReRender(/* () */0);
+forceGlobalReRender(undefined);
 
 exports.forceGlobalReRender = forceGlobalReRender;
 /*  Not a pure module */

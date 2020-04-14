@@ -456,8 +456,7 @@ function cardToValue(gameDenomination, playingCard) {
 }
 
 function compareCardValue(denom, cardA, cardB) {
-  var match = cardToValue(denom, cardA) > cardToValue(denom, cardB);
-  if (match) {
+  if (cardToValue(denom, cardA) > cardToValue(denom, cardB)) {
     return -1;
   } else {
     return 1;
@@ -472,7 +471,7 @@ function shuffleArrayInPlace(arr, seed) {
     Caml_array.caml_array_set(arr, n, Caml_array.caml_array_get(arr, k));
     Caml_array.caml_array_set(arr, k, temp);
   }
-  return /* () */0;
+  
 }
 
 var setOfCardsDealerPlus1 = Caml_array.caml_make_vect(13, /* tuple */[
@@ -509,7 +508,7 @@ function deal(param) {
       console.log("should be unreachable");
     }
   }
-  return /* () */0;
+  
 }
 
 function impureGetRandomSeedUpTo60k(param) {

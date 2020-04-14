@@ -5,9 +5,9 @@ var $$Array = require("bs-platform/lib/js/array.js");
 var Ute$ReactHooksTemplate = require("./Ute.bs.js");
 
 function impureShuffleOfPack(param) {
-  var seed = Ute$ReactHooksTemplate.impureGetRandomSeedUpTo60k(/* () */0);
+  var seed = Ute$ReactHooksTemplate.impureGetRandomSeedUpTo60k(undefined);
   Ute$ReactHooksTemplate.shuffleArrayInPlace(Ute$ReactHooksTemplate.arrayOfCards, seed);
-  Ute$ReactHooksTemplate.deal(/* () */0);
+  Ute$ReactHooksTemplate.deal(undefined);
   $$Array.sort((function (param, param$1) {
           return Ute$ReactHooksTemplate.compareCardValue(/* NO_TRUMPS */0, param, param$1);
         }), Ute$ReactHooksTemplate.setOfCardsDealerPlus1);
@@ -48,12 +48,12 @@ function impureShuffleOfPack(param) {
                   v
                 ];
         }), setOfCardsAsStringDealerPlus0);
-  return /* record */[
-          /* dealerPlus1 */setOfCardsWithIndexDealerPlus1,
-          /* dealerPlus2 */setOfCardsWithIndexDealerPlus2,
-          /* dealerPlus3 */setOfCardsWithIndexDealerPlus3,
-          /* dealerPlus0 */setOfCardsWithIndexDealerPlus0
-        ];
+  return {
+          dealerPlus1: setOfCardsWithIndexDealerPlus1,
+          dealerPlus2: setOfCardsWithIndexDealerPlus2,
+          dealerPlus3: setOfCardsWithIndexDealerPlus3,
+          dealerPlus0: setOfCardsWithIndexDealerPlus0
+        };
 }
 
 exports.impureShuffleOfPack = impureShuffleOfPack;
