@@ -1,9 +1,12 @@
-let cardHeightVh = 30.0;
+// set card size as % of vertical inner screen height
+let cardHeightVh = 25.0;
+// traditional aspect ratio is 1.56
 let cardHeightOverCardWidth = 1.56;
+// where is this from?
 let rotationOriginYOffsetMultiplier = 4.25;
 let angleDeg = 3.75;
 // use 6.0 for centre card upright, 7.5 looks better, but offsets catds to left
-let cardIndexOffset = 7.5;
+let cardIndexOffset = 0.0;
 let baizeAsFractionOfViewportWidth = 0.8;
 let f2s = Js.Float.toString;
 

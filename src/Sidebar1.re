@@ -4,7 +4,7 @@ let s2e = React.string;
 let make = (~dispatch: Global.action => unit) => {
   <div>
     <button 
-    onClick=((_e) => dispatch(AddItem)) //Js.log("Cicked Test"))//dispatch(AddItem))
+    onClick=((_e) => dispatch(Action1)) //Js.log("Cicked Test"))//dispatch(Action1))
     style=(
       ReactDOMRe.Style.make(
         ~color={"Red"}, 
@@ -14,7 +14,7 @@ let make = (~dispatch: Global.action => unit) => {
       )
     )
     >
-      (s2e("Test"))
+      (s2e("Action1"))
     </button>
     <button 
     onClick=((_e) => dispatch(LogToConsole)) //Js.log("Cicked LogToConsole"))//
@@ -27,7 +27,7 @@ let make = (~dispatch: Global.action => unit) => {
       )
     )
     >
-      (s2e("Log to Console"))
+      (s2e("Action2"))
     </button>
   </div>
 };

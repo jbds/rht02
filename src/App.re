@@ -6,137 +6,98 @@ let make = () => {
   // useReducer expects to have passed in a reducer function and an initial state
   let (state, dispatch) = React.useReducer(reducer, initialState);
 
-  //let cardsDealerPlus0Qty = List.length(cardsDealerPlus0);
-  
   <div id={"main"}>
     <div>
-      (
-        React.array(
-            Array.map(
-              ((index, filePath)) => 
               <PlayingCardRotatable 
-                key={string_of_int(index)}
-                cardIndex=index
-                filePath={"./images/" ++ filePath ++ ".svg"}
+                key={string_of_int(0)}
+                cardIndex=0
+                filePath={"./images/" ++ "1B" ++ ".svg"}
                 leftVw=50.0
                 topVh=75.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
               />
-              , 
-              state.dealerPlus1
-            )
-        )
-      ) 
     </div>   
     <div>
-      (
-        React.array(
-            Array.map(
-              ((index, filePath)) => 
               <PlayingCardRotatable 
-                key={string_of_int(index)}
-                cardIndex=index
-                filePath={"./images/" ++ filePath ++ ".svg"}
+                key={string_of_int(0)}
+                cardIndex=0
+                filePath={"./images/" ++ "1B" ++ ".svg"}
                 leftVw=25.0
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
               />
-              , 
-              state.dealerPlus2
-            )
-        )
-      ) 
     </div>   
     <div>
-      (
-        React.array(
-            Array.map(
-              ((index, filePath)) => 
               <PlayingCardRotatable 
-                key={string_of_int(index)}
-                cardIndex=index
-                filePath={"./images/" ++ filePath ++ ".svg"}
+                key={string_of_int(0)}
+                cardIndex=0
+                filePath={"./images/" ++ "1B" ++ ".svg"}
                 leftVw=50.0
                 topVh=25.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
               />
-              , 
-              state.dealerPlus3
-            )
-        )
-      ) 
     </div>  
     <div>
-      (
-        React.array(
-            Array.map(
-              ((index, filePath)) => 
               <PlayingCardRotatable 
-                key={string_of_int(index)}
-                cardIndex=index
-                filePath={"./images/" ++ filePath ++ ".svg"}
+                key={string_of_int(0)}
+                cardIndex=0
+                filePath={"./images/" ++ "1B" ++ ".svg"}
                 leftVw=75.0
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
               />
-              , 
-              state.dealerPlus0
-            )
-        )
-      ) 
     </div>   
     <div
       style=(
         ReactDOMRe.Style.make(
           ~position={"absolute"}, 
-          ~top={"15%"}, 
+          ~top={"40%"}, 
           ~left={"50%"}, 
           ()
         )
       )
     >
-      //(s2e(string_of_int(cardsDealerPlus0Qty)))
-      (s2e("N"))
+      <FlipButton dispatch location="North"/>
     </div>
     <div
       style=(
         ReactDOMRe.Style.make(
           ~position={"absolute"}, 
-          ~top={"85%"}, 
+          ~top={"90%"}, 
           ~left={"50%"}, 
           ()
         )
       )
     >
-      (s2e("S"))
+      <FlipButton dispatch location="South"/>
     </div>
     <div
       style=(
         ReactDOMRe.Style.make(
           ~position={"absolute"}, 
-          ~top={"50%"}, 
-          ~left={"15%"}, 
+          ~top={"65%"}, 
+          ~left={"25%"}, 
           ()
         )
       )
     >
-      (s2e("W"))
+      <FlipButton dispatch location="West"/>
     </div>
     <div
       style=(
         ReactDOMRe.Style.make(
           ~position={"absolute"}, 
-          ~top={"50%"}, 
-          ~left={"85%"}, 
+          ~top={"65%"}, 
+          ~left={"75%"}, 
           ()
         )
       )
     >
-      (s2e("E"))
+      <FlipButton dispatch location="East"/>
     </div>
     <div id="sidebar1">
       <Sidebar1 dispatch/>

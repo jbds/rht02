@@ -14,16 +14,16 @@ function PlayingCardRotatable(Props) {
   var topVh = Props.topVh;
   var parentElementWidthPx = Props.parentElementWidthPx;
   var parentElementHeightPx = Props.parentElementHeightPx;
-  var cardHalfWidthPx = parentElementHeightPx * 30.0 / (100.0 * 1.56 * 2.0);
+  var cardHalfWidthPx = parentElementHeightPx * 25.0 / (100.0 * 1.56 * 2.0);
   var leftAdjustedVw = leftVw * 0.8 - cardHalfWidthPx * 100.0 / parentElementWidthPx;
-  var cardHalfHeightPx = parentElementHeightPx * 30.0 / (100.0 * 2.0);
+  var cardHalfHeightPx = parentElementHeightPx * 25.0 / (100.0 * 2.0);
   var topAdj = topVh - cardHalfHeightPx * 100.0 / parentElementHeightPx;
   var transformA = "translate(" + (cardHalfWidthPx.toString() + ("px, " + ((-cardHalfWidthPx * 4.25).toString() + "px)")));
-  var transformB = "rotate(" + ((3.75 * (cardIndex - 7.5)).toString() + "deg)");
+  var transformB = "rotate(" + ((3.75 * (cardIndex - 0.0)).toString() + "deg)");
   var transformC = "translate(" + ((-cardHalfWidthPx).toString() + ("px, " + ((cardHalfWidthPx * 4.25).toString() + "px)")));
   return React.createElement("img", {
               style: {
-                height: (30.0).toString() + "vh",
+                height: (25.0).toString() + "vh",
                 left: leftAdjustedVw.toString() + "vw",
                 position: "absolute",
                 top: topAdj.toString() + "vh",
@@ -33,7 +33,7 @@ function PlayingCardRotatable(Props) {
             });
 }
 
-var cardHeightVh = 30.0;
+var cardHeightVh = 25.0;
 
 var cardHeightOverCardWidth = 1.56;
 
@@ -41,7 +41,7 @@ var rotationOriginYOffsetMultiplier = 4.25;
 
 var angleDeg = 3.75;
 
-var cardIndexOffset = 7.5;
+var cardIndexOffset = 0.0;
 
 var baizeAsFractionOfViewportWidth = 0.8;
 

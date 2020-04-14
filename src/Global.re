@@ -8,7 +8,7 @@ type state = {
 };
 
 type action =
-  | AddItem
+  | Action1
   | LogToConsole;
 
 // utility
@@ -25,8 +25,10 @@ let initialState: Shuffle.state = {
 let reducer = (state, action) =>
   {
     switch action {
-      | AddItem => {
-        state }
+      | Action1 => {
+        Js.log("Action1 trace")
+        state;
+      }
       | LogToConsole => {
           let fourSetsOfCards = Shuffle.impureShuffleOfPack();
           Js.log(fourSetsOfCards);

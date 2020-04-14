@@ -23,12 +23,13 @@ var initialState = {
 };
 
 function reducer(state, action) {
-  if (!action) {
-    return state;
+  if (action) {
+    var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(undefined);
+    console.log(fourSetsOfCards);
+    return fourSetsOfCards;
   }
-  var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(undefined);
-  console.log(fourSetsOfCards);
-  return fourSetsOfCards;
+  console.log("Action1 trace");
+  return state;
 }
 
 exports.s2e = s2e;
