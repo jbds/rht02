@@ -13,7 +13,7 @@ function forceGlobalReRender(param) {
   return ReactDOMRe.renderToElementWithId(React.createElement(App$ReactHooksTemplate.make, { }), "root");
 }
 
-ReactDOMRe.renderToElementWithId(React.createElement(App$ReactHooksTemplate.make, { }), "root");
+forceGlobalReRender(/* () */0);
 
 exports.forceGlobalReRender = forceGlobalReRender;
 /*  Not a pure module */

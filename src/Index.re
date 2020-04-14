@@ -6,5 +6,6 @@ let forceGlobalReRender = () => {
   ReactDOMRe.renderToElementWithId(<App />, "root");
 };
 
-ReactDOMRe.renderToElementWithId(<App />, "root");
+// do one initial render 
+forceGlobalReRender();
 
