@@ -1,7 +1,7 @@
 let s2e = React.string;
 
 [@react.component]
-let make = (~dispatch: Global.action => unit, ~location: string) => {
+let make = (~dispatch: Global.action => unit, ~location: Global.location) => {
   <div>
     <button 
     onClick=((_e) =>  dispatch(Flip (location))) //Js.log("Flip action trace location: " ++ location))

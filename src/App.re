@@ -7,6 +7,7 @@ let make = () => {
   let (state, dispatch) = React.useReducer(reducer, initialState);
 
   <div id={"main"}>
+    // SOUTH CARD
     <div>
               <PlayingCardRotatable 
                 key={string_of_int(0)}
@@ -18,7 +19,21 @@ let make = () => {
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=false
               />
-    </div>   
+    </div>  
+    // SOUTH FLIP 
+    <div
+      style=(
+        ReactDOMRe.Style.make(
+          ~position={"absolute"}, 
+          ~top={"90%"}, 
+          ~left={"50%"}, 
+          ()
+        )
+      )
+    >
+      <FlipButton dispatch location=South/>
+    </div>
+    // WEST CARD
     <div>
               <PlayingCardRotatable 
                 key={string_of_int(0)}
@@ -30,7 +45,21 @@ let make = () => {
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=false
               />
-    </div>   
+    </div>  
+    // WEST FLIP
+    <div
+      style=(
+        ReactDOMRe.Style.make(
+          ~position={"absolute"}, 
+          ~top={"65%"}, 
+          ~left={"25%"}, 
+          ()
+        )
+      )
+    >
+      <FlipButton dispatch location=West/>
+    </div>
+    // NORTH CARD
     <div>
       (
         React.array(
@@ -51,7 +80,21 @@ let make = () => {
           )
         )
       )
-    </div>  
+    </div> 
+    // NORTH FLIP 
+    <div
+      style=(
+        ReactDOMRe.Style.make(
+          ~position={"absolute"}, 
+          ~top={"40%"}, 
+          ~left={"50%"}, 
+          ()
+        )
+      )
+    >
+      <FlipButton dispatch location=North/>
+    </div>
+    // EAST CARD
     <div>
               <PlayingCardRotatable 
                 key={string_of_int(0)}
@@ -63,43 +106,8 @@ let make = () => {
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=false
               />
-    </div>   
-    <div
-      style=(
-        ReactDOMRe.Style.make(
-          ~position={"absolute"}, 
-          ~top={"40%"}, 
-          ~left={"50%"}, 
-          ()
-        )
-      )
-    >
-      <FlipButton dispatch location="North"/>
-    </div>
-    <div
-      style=(
-        ReactDOMRe.Style.make(
-          ~position={"absolute"}, 
-          ~top={"90%"}, 
-          ~left={"50%"}, 
-          ()
-        )
-      )
-    >
-      <FlipButton dispatch location="South"/>
-    </div>
-    <div
-      style=(
-        ReactDOMRe.Style.make(
-          ~position={"absolute"}, 
-          ~top={"65%"}, 
-          ~left={"25%"}, 
-          ()
-        )
-      )
-    >
-      <FlipButton dispatch location="West"/>
-    </div>
+    </div>  
+    // EAST FLIP 
     <div
       style=(
         ReactDOMRe.Style.make(
@@ -110,8 +118,9 @@ let make = () => {
         )
       )
     >
-      <FlipButton dispatch location="East"/>
+      <FlipButton dispatch location=East/>
     </div>
+    // SIDEBARS
     <div id="sidebar1">
       <Sidebar1 dispatch/>
     </div>

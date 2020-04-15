@@ -23,6 +23,15 @@ function App(Props) {
                       parentElementHeightPx: window.innerHeight,
                       isFlipSide: false,
                       key: String(0)
+                    })), React.createElement("div", {
+                  style: {
+                    left: "50%",
+                    position: "absolute",
+                    top: "90%"
+                  }
+                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
+                      dispatch: dispatch,
+                      location: /* South */2
                     })), React.createElement("div", undefined, React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                       cardIndex: 0,
                       filePath: "./images/1B.svg",
@@ -32,6 +41,15 @@ function App(Props) {
                       parentElementHeightPx: window.innerHeight,
                       isFlipSide: false,
                       key: String(0)
+                    })), React.createElement("div", {
+                  style: {
+                    left: "25%",
+                    position: "absolute",
+                    top: "65%"
+                  }
+                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
+                      dispatch: dispatch,
+                      location: /* West */3
                     })), React.createElement("div", undefined, $$Array.map((function (param) {
                         var index = param[0];
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
@@ -44,7 +62,16 @@ function App(Props) {
                                     isFlipSide: state.plus0IsFlipped,
                                     key: String(index)
                                   });
-                      }), state.dealerPlus3)), React.createElement("div", undefined, React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
+                      }), state.dealerPlus3)), React.createElement("div", {
+                  style: {
+                    left: "50%",
+                    position: "absolute",
+                    top: "40%"
+                  }
+                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
+                      dispatch: dispatch,
+                      location: /* North */0
+                    })), React.createElement("div", undefined, React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                       cardIndex: 0,
                       filePath: "./images/1B.svg",
                       leftVw: 75.0,
@@ -55,40 +82,13 @@ function App(Props) {
                       key: String(0)
                     })), React.createElement("div", {
                   style: {
-                    left: "50%",
-                    position: "absolute",
-                    top: "40%"
-                  }
-                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
-                      dispatch: dispatch,
-                      location: "North"
-                    })), React.createElement("div", {
-                  style: {
-                    left: "50%",
-                    position: "absolute",
-                    top: "90%"
-                  }
-                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
-                      dispatch: dispatch,
-                      location: "South"
-                    })), React.createElement("div", {
-                  style: {
-                    left: "25%",
-                    position: "absolute",
-                    top: "65%"
-                  }
-                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
-                      dispatch: dispatch,
-                      location: "West"
-                    })), React.createElement("div", {
-                  style: {
                     left: "75%",
                     position: "absolute",
                     top: "65%"
                   }
                 }, React.createElement(FlipButton$ReactHooksTemplate.make, {
                       dispatch: dispatch,
-                      location: "East"
+                      location: /* East */1
                     })), React.createElement("div", {
                   id: "sidebar1"
                 }, React.createElement(Sidebar1$ReactHooksTemplate.make, {

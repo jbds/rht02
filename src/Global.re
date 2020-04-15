@@ -11,10 +11,16 @@ type state = {
   plus0IsFlipped: bool,
 };
 
+type location =
+  | North
+  | East
+  | South
+  | West;
+
 type action =
   | Action1
   | Action2
-  | Flip (string)
+  | Flip (location);
 
 // utility
 let s2e = React.string;
@@ -44,14 +50,41 @@ let reducer = (state, action) =>
           // return the merged state
           fourSetsOfCards;
       }
-      | Flip (str) => {
-        Js.log("Flip from " ++ str);
-        {
-          ...state, 
-          plus0IsFlipped: !state.plus0IsFlipped, 
-          plus1IsFlipped: !state.plus1IsFlipped, 
-          plus2IsFlipped: !state.plus2IsFlipped,
-          plus3IsFlipped: !state.plus3IsFlipped,
+      | Flip (loc) => {
+        Js.log("Flip from some location");
+        switch (loc) {
+        | North => 
+          {
+            ...state, 
+            plus0IsFlipped: !state.plus0IsFlipped, 
+            plus1IsFlipped: !state.plus1IsFlipped, 
+            plus2IsFlipped: !state.plus2IsFlipped,
+            plus3IsFlipped: !state.plus3IsFlipped,
+          }
+        | South =>
+          {
+            ...state, 
+            plus0IsFlipped: !state.plus0IsFlipped, 
+            plus1IsFlipped: !state.plus1IsFlipped, 
+            plus2IsFlipped: !state.plus2IsFlipped,
+            plus3IsFlipped: !state.plus3IsFlipped,
+          }
+        | East =>
+          {
+            ...state, 
+            plus0IsFlipped: !state.plus0IsFlipped, 
+            plus1IsFlipped: !state.plus1IsFlipped, 
+            plus2IsFlipped: !state.plus2IsFlipped,
+            plus3IsFlipped: !state.plus3IsFlipped,
+          }
+        | West =>
+          {
+            ...state, 
+            plus0IsFlipped: !state.plus0IsFlipped, 
+            plus1IsFlipped: !state.plus1IsFlipped, 
+            plus2IsFlipped: !state.plus2IsFlipped,
+            plus3IsFlipped: !state.plus3IsFlipped,
+          }
         }
       }
     }

@@ -36,7 +36,7 @@ function reducer(state, action) {
     console.log("Action1 trace");
     return state;
   }
-  console.log("Flip from " + action[0]);
+  console.log("Flip from some location");
   return {
           dealerPlus1: state.dealerPlus1,
           dealerPlus2: state.dealerPlus2,
