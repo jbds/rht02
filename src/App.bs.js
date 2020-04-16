@@ -5,6 +5,7 @@ var $$Array = require("bs-platform/lib/js/array.js");
 var React = require("react");
 var Global$ReactHooksTemplate = require("./Global.bs.js");
 var Sidebar1$ReactHooksTemplate = require("./Sidebar1.bs.js");
+var Sidebar3$ReactHooksTemplate = require("./Sidebar3.bs.js");
 var FlipButton$ReactHooksTemplate = require("./FlipButton.bs.js");
 var PlayingCardRotatable$ReactHooksTemplate = require("./PlayingCardRotatable.bs.js");
 
@@ -16,12 +17,12 @@ function App(Props) {
               id: "main"
             }, React.createElement("div", undefined, React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                       cardIndex: 0,
-                      filePath: "./images/1B.svg",
+                      filePath: "./images/KS.svg",
                       leftVw: 50.0,
                       topVh: 75.0,
                       parentElementWidthPx: window.innerWidth,
                       parentElementHeightPx: window.innerHeight,
-                      isFlipSide: false,
+                      isFlipSide: state.southIsFlipped,
                       key: String(0)
                     })), React.createElement("div", {
                   style: {
@@ -34,12 +35,12 @@ function App(Props) {
                       location: /* South */2
                     })), React.createElement("div", undefined, React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                       cardIndex: 0,
-                      filePath: "./images/1B.svg",
+                      filePath: "./images/QH.svg",
                       leftVw: 25.0,
                       topVh: 50.0,
                       parentElementWidthPx: window.innerWidth,
                       parentElementHeightPx: window.innerHeight,
-                      isFlipSide: false,
+                      isFlipSide: state.westIsFlipped,
                       key: String(0)
                     })), React.createElement("div", {
                   style: {
@@ -59,10 +60,10 @@ function App(Props) {
                                     topVh: 25.0,
                                     parentElementWidthPx: window.innerWidth,
                                     parentElementHeightPx: window.innerHeight,
-                                    isFlipSide: state.plus0IsFlipped,
+                                    isFlipSide: state.northIsFlipped,
                                     key: String(index)
                                   });
-                      }), state.dealerPlus3)), React.createElement("div", {
+                      }), state.cardsNorth)), React.createElement("div", {
                   style: {
                     left: "50%",
                     position: "absolute",
@@ -73,12 +74,12 @@ function App(Props) {
                       location: /* North */0
                     })), React.createElement("div", undefined, React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                       cardIndex: 0,
-                      filePath: "./images/1B.svg",
+                      filePath: "./images/JD.svg",
                       leftVw: 75.0,
                       topVh: 50.0,
                       parentElementWidthPx: window.innerWidth,
                       parentElementHeightPx: window.innerHeight,
-                      isFlipSide: false,
+                      isFlipSide: state.eastIsFlipped,
                       key: String(0)
                     })), React.createElement("div", {
                   style: {
@@ -95,9 +96,11 @@ function App(Props) {
                       dispatch: dispatch
                     })), React.createElement("div", {
                   id: "sidebar2"
-                }, Global$ReactHooksTemplate.s2e("Sidebar2")), React.createElement("div", {
+                }), React.createElement("div", {
                   id: "sidebar3"
-                }, Global$ReactHooksTemplate.s2e("Sidebar3")));
+                }, React.createElement(Sidebar3$ReactHooksTemplate.make, {
+                      dispatch: dispatch
+                    })));
 }
 
 var make = App;

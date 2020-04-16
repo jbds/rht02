@@ -1,40 +1,44 @@
 // state and reducer are used by the top level component App
 
-type state = {
-  dealerPlus1: array((int, string)),
-  dealerPlus2: array((int, string)),
-  dealerPlus3: array((int, string)),
-  dealerPlus0: array((int, string)),
-  plus1IsFlipped: bool,
-  plus2IsFlipped: bool,
-  plus3IsFlipped: bool,
-  plus0IsFlipped: bool,
-};
+// type state = {
+//   dealerPlus1: array((int, string)),
+//   dealerPlus2: array((int, string)),
+//   dealerPlus3: array((int, string)),
+//   dealerPlus0: array((int, string)),
+//   plus1IsFlipped: bool,
+//   plus2IsFlipped: bool,
+//   plus3IsFlipped: bool,
+//   plus0IsFlipped: bool,
+// };
 
 type location =
   | North
   | East
   | South
-  | West;
+  | West
+;
 
 type action =
   | Action1
   | Action2
-  | Flip (location);
+  | Flip (location)
+  | HideAllCards
+  | ShowAllCards
+;
 
 // utility
 let s2e = React.string;
 
 // force to type Shuffle.state
 let initialState: Shuffle.state = {
-  dealerPlus1: [||], 
-  dealerPlus2: [||], 
-  dealerPlus3: [||], 
-  dealerPlus0: [||],
-  plus1IsFlipped: true,
-  plus2IsFlipped: true,
-  plus3IsFlipped: true,
-  plus0IsFlipped: true,
+  cardsNorth: [||], 
+  cardsEast: [||], 
+  cardsSouth: [||], 
+  cardsWest: [||],
+  northIsFlipped: true,
+  eastIsFlipped: true,
+  southIsFlipped: true,
+  westIsFlipped: true,
 };
 
 let reducer = (state, action) =>
@@ -56,36 +60,42 @@ let reducer = (state, action) =>
         | North => 
           {
             ...state, 
-            plus0IsFlipped: !state.plus0IsFlipped, 
-            plus1IsFlipped: !state.plus1IsFlipped, 
-            plus2IsFlipped: !state.plus2IsFlipped,
-            plus3IsFlipped: !state.plus3IsFlipped,
+            northIsFlipped: !state.northIsFlipped, 
           }
         | South =>
           {
             ...state, 
-            plus0IsFlipped: !state.plus0IsFlipped, 
-            plus1IsFlipped: !state.plus1IsFlipped, 
-            plus2IsFlipped: !state.plus2IsFlipped,
-            plus3IsFlipped: !state.plus3IsFlipped,
+            southIsFlipped: !state.southIsFlipped,
           }
         | East =>
           {
             ...state, 
-            plus0IsFlipped: !state.plus0IsFlipped, 
-            plus1IsFlipped: !state.plus1IsFlipped, 
-            plus2IsFlipped: !state.plus2IsFlipped,
-            plus3IsFlipped: !state.plus3IsFlipped,
+            eastIsFlipped: !state.eastIsFlipped, 
           }
         | West =>
           {
             ...state, 
-            plus0IsFlipped: !state.plus0IsFlipped, 
-            plus1IsFlipped: !state.plus1IsFlipped, 
-            plus2IsFlipped: !state.plus2IsFlipped,
-            plus3IsFlipped: !state.plus3IsFlipped,
+            westIsFlipped: !state.westIsFlipped,
           }
         }
+      }
+      | HideAllCards => {
+          {
+            ...state, 
+            northIsFlipped: true,
+            eastIsFlipped: true,
+            southIsFlipped: true,
+            westIsFlipped: true,
+          }
+      }
+      | ShowAllCards => {
+          {
+            ...state, 
+            northIsFlipped: false,
+            eastIsFlipped: false,
+            southIsFlipped: false,
+            westIsFlipped: false,
+          }
       }
     }
   };

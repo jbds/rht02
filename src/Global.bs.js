@@ -7,46 +7,109 @@ function s2e(prim) {
   return prim;
 }
 
-var initialState_dealerPlus1 = [];
+var initialState_cardsNorth = [];
 
-var initialState_dealerPlus2 = [];
+var initialState_cardsEast = [];
 
-var initialState_dealerPlus3 = [];
+var initialState_cardsSouth = [];
 
-var initialState_dealerPlus0 = [];
+var initialState_cardsWest = [];
 
 var initialState = {
-  dealerPlus1: initialState_dealerPlus1,
-  dealerPlus2: initialState_dealerPlus2,
-  dealerPlus3: initialState_dealerPlus3,
-  dealerPlus0: initialState_dealerPlus0,
-  plus1IsFlipped: true,
-  plus2IsFlipped: true,
-  plus3IsFlipped: true,
-  plus0IsFlipped: true
+  cardsNorth: initialState_cardsNorth,
+  cardsEast: initialState_cardsEast,
+  cardsSouth: initialState_cardsSouth,
+  cardsWest: initialState_cardsWest,
+  northIsFlipped: true,
+  eastIsFlipped: true,
+  southIsFlipped: true,
+  westIsFlipped: true
 };
 
 function reducer(state, action) {
   if (typeof action === "number") {
-    if (action !== 0) {
-      var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(undefined);
-      console.log(fourSetsOfCards);
-      return fourSetsOfCards;
+    switch (action) {
+      case /* Action1 */0 :
+          console.log("Action1 trace");
+          return state;
+      case /* Action2 */1 :
+          var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(undefined);
+          console.log(fourSetsOfCards);
+          return fourSetsOfCards;
+      case /* HideAllCards */2 :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: true,
+                  eastIsFlipped: true,
+                  southIsFlipped: true,
+                  westIsFlipped: true
+                };
+      case /* ShowAllCards */3 :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: false,
+                  eastIsFlipped: false,
+                  southIsFlipped: false,
+                  westIsFlipped: false
+                };
+      
     }
-    console.log("Action1 trace");
-    return state;
+  } else {
+    console.log("Flip from some location");
+    switch (action[0]) {
+      case /* North */0 :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: !state.northIsFlipped,
+                  eastIsFlipped: state.eastIsFlipped,
+                  southIsFlipped: state.southIsFlipped,
+                  westIsFlipped: state.westIsFlipped
+                };
+      case /* East */1 :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: state.northIsFlipped,
+                  eastIsFlipped: !state.eastIsFlipped,
+                  southIsFlipped: state.southIsFlipped,
+                  westIsFlipped: state.westIsFlipped
+                };
+      case /* South */2 :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: state.northIsFlipped,
+                  eastIsFlipped: state.eastIsFlipped,
+                  southIsFlipped: !state.southIsFlipped,
+                  westIsFlipped: state.westIsFlipped
+                };
+      case /* West */3 :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: state.northIsFlipped,
+                  eastIsFlipped: state.eastIsFlipped,
+                  southIsFlipped: state.southIsFlipped,
+                  westIsFlipped: !state.westIsFlipped
+                };
+      
+    }
   }
-  console.log("Flip from some location");
-  return {
-          dealerPlus1: state.dealerPlus1,
-          dealerPlus2: state.dealerPlus2,
-          dealerPlus3: state.dealerPlus3,
-          dealerPlus0: state.dealerPlus0,
-          plus1IsFlipped: !state.plus1IsFlipped,
-          plus2IsFlipped: !state.plus2IsFlipped,
-          plus3IsFlipped: !state.plus3IsFlipped,
-          plus0IsFlipped: !state.plus0IsFlipped
-        };
 }
 
 exports.s2e = s2e;

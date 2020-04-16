@@ -1,14 +1,14 @@
 open Ute;
 
 type state = {
-  dealerPlus1: array((int, string)),
-  dealerPlus2: array((int, string)),
-  dealerPlus3: array((int, string)),
-  dealerPlus0: array((int, string)),
-  plus1IsFlipped: bool,
-  plus2IsFlipped: bool,
-  plus3IsFlipped: bool,
-  plus0IsFlipped: bool,
+  cardsNorth: array((int, string)),
+  cardsEast: array((int, string)),
+  cardsSouth: array((int, string)),
+  cardsWest: array((int, string)),
+  northIsFlipped: bool,
+  eastIsFlipped: bool,
+  southIsFlipped: bool,
+  westIsFlipped: bool,
 };
 
 
@@ -60,14 +60,14 @@ let impureShuffleOfPack = () =>
 
   // return the four sets of cards as one record aka object
   {
-    dealerPlus1: setOfCardsWithIndexDealerPlus1, 
-    dealerPlus2: setOfCardsWithIndexDealerPlus2, 
-    dealerPlus3: setOfCardsWithIndexDealerPlus3, 
-    dealerPlus0: setOfCardsWithIndexDealerPlus0, 
-    plus1IsFlipped: true,
-    plus2IsFlipped: true,
-    plus3IsFlipped: true,
-    plus0IsFlipped: true,
+    cardsNorth: setOfCardsWithIndexDealerPlus1, 
+    cardsEast: setOfCardsWithIndexDealerPlus2, 
+    cardsSouth: setOfCardsWithIndexDealerPlus3, 
+    cardsWest: setOfCardsWithIndexDealerPlus0, 
+    northIsFlipped: true,
+    eastIsFlipped: true,
+    southIsFlipped: true,
+    westIsFlipped: true,
   };
 };
 

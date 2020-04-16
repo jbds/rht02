@@ -12,12 +12,12 @@ let make = () => {
               <PlayingCardRotatable 
                 key={string_of_int(0)}
                 cardIndex=0
-                filePath={"./images/" ++ "1B" ++ ".svg"}
+                filePath={"./images/" ++ "KS" ++ ".svg"}
                 leftVw=50.0
                 topVh=75.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
-                isFlipSide=false
+                isFlipSide=state.southIsFlipped
               />
     </div>  
     // SOUTH FLIP 
@@ -38,12 +38,12 @@ let make = () => {
               <PlayingCardRotatable 
                 key={string_of_int(0)}
                 cardIndex=0
-                filePath={"./images/" ++ "1B" ++ ".svg"}
+                filePath={"./images/" ++ "QH" ++ ".svg"}
                 leftVw=25.0
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
-                isFlipSide=false
+                isFlipSide=state.westIsFlipped
               />
     </div>  
     // WEST FLIP
@@ -73,10 +73,10 @@ let make = () => {
                 topVh=25.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
-                isFlipSide=state.plus0IsFlipped
+                isFlipSide=state.northIsFlipped
               />
               ,
-              state.dealerPlus3
+              state.cardsNorth
           )
         )
       )
@@ -99,12 +99,12 @@ let make = () => {
               <PlayingCardRotatable 
                 key={string_of_int(0)}
                 cardIndex=0
-                filePath={"./images/" ++ "1B" ++ ".svg"}
+                filePath={"./images/" ++ "JD" ++ ".svg"}
                 leftVw=75.0
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
-                isFlipSide=false
+                isFlipSide=state.eastIsFlipped
               />
     </div>  
     // EAST FLIP 
@@ -124,7 +124,12 @@ let make = () => {
     <div id="sidebar1">
       <Sidebar1 dispatch/>
     </div>
-    <div id="sidebar2">(s2e("Sidebar2"))</div>
-    <div id="sidebar3">(s2e("Sidebar3"))</div>
+    <div id="sidebar2">
+      //(s2e("Sidebar2"))
+    </div>
+    <div id="sidebar3">
+      //(s2e("Sidebar3"))
+      <Sidebar3 dispatch/>
+    </div>
   </div>
 };

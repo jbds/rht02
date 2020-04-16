@@ -49,14 +49,14 @@ function impureShuffleOfPack(param) {
                 ];
         }), setOfCardsAsStringDealerPlus0);
   return {
-          dealerPlus1: setOfCardsWithIndexDealerPlus1,
-          dealerPlus2: setOfCardsWithIndexDealerPlus2,
-          dealerPlus3: setOfCardsWithIndexDealerPlus3,
-          dealerPlus0: setOfCardsWithIndexDealerPlus0,
-          plus1IsFlipped: true,
-          plus2IsFlipped: true,
-          plus3IsFlipped: true,
-          plus0IsFlipped: true
+          cardsNorth: setOfCardsWithIndexDealerPlus1,
+          cardsEast: setOfCardsWithIndexDealerPlus2,
+          cardsSouth: setOfCardsWithIndexDealerPlus3,
+          cardsWest: setOfCardsWithIndexDealerPlus0,
+          northIsFlipped: true,
+          eastIsFlipped: true,
+          southIsFlipped: true,
+          westIsFlipped: true
         };
 }
 

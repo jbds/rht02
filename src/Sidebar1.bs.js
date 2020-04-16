@@ -12,23 +12,14 @@ function Sidebar1(Props) {
   var dispatch = Props.dispatch;
   return React.createElement("div", undefined, React.createElement("button", {
                   style: {
-                    color: "Red",
-                    fontSize: "3vh",
-                    marginTop: "1vh"
-                  },
-                  onClick: (function (_e) {
-                      return Curry._1(dispatch, /* Action1 */0);
-                    })
-                }, "Action1"), React.createElement("button", {
-                  style: {
                     color: "Green",
-                    fontSize: "3vh",
+                    fontSize: "2vh",
                     marginTop: "1vh"
                   },
                   onClick: (function (_e) {
                       return Curry._1(dispatch, /* Action2 */1);
                     })
-                }, "Action2"));
+                }, "Shuffle"));
 }
 
 var make = Sidebar1;
