@@ -8,262 +8,314 @@ var Caml_array = require("bs-platform/lib/js/caml_array.js");
 var orderedListOfCards = /* :: */[
   /* tuple */[
     /* Ace */0,
-    /* Spades */0
+    /* Spades */0,
+    /* Dealer */0
   ],
   /* :: */[
     /* tuple */[
       /* King */1,
-      /* Spades */0
+      /* Spades */0,
+      /* Dealer */0
     ],
     /* :: */[
       /* tuple */[
         /* Queen */2,
-        /* Spades */0
+        /* Spades */0,
+        /* Dealer */0
       ],
       /* :: */[
         /* tuple */[
           /* Jack */3,
-          /* Spades */0
+          /* Spades */0,
+          /* Dealer */0
         ],
         /* :: */[
           /* tuple */[
             /* Ten */4,
-            /* Spades */0
+            /* Spades */0,
+            /* Dealer */0
           ],
           /* :: */[
             /* tuple */[
               /* Nine */5,
-              /* Spades */0
+              /* Spades */0,
+              /* Dealer */0
             ],
             /* :: */[
               /* tuple */[
                 /* Eight */6,
-                /* Spades */0
+                /* Spades */0,
+                /* Dealer */0
               ],
               /* :: */[
                 /* tuple */[
                   /* Seven */7,
-                  /* Spades */0
+                  /* Spades */0,
+                  /* Dealer */0
                 ],
                 /* :: */[
                   /* tuple */[
                     /* Six */8,
-                    /* Spades */0
+                    /* Spades */0,
+                    /* Dealer */0
                   ],
                   /* :: */[
                     /* tuple */[
                       /* Five */9,
-                      /* Spades */0
+                      /* Spades */0,
+                      /* Dealer */0
                     ],
                     /* :: */[
                       /* tuple */[
                         /* Four */10,
-                        /* Spades */0
+                        /* Spades */0,
+                        /* Dealer */0
                       ],
                       /* :: */[
                         /* tuple */[
                           /* Three */11,
-                          /* Spades */0
+                          /* Spades */0,
+                          /* Dealer */0
                         ],
                         /* :: */[
                           /* tuple */[
                             /* Two */12,
-                            /* Spades */0
+                            /* Spades */0,
+                            /* Dealer */0
                           ],
                           /* :: */[
                             /* tuple */[
                               /* Ace */0,
-                              /* Hearts */1
+                              /* Hearts */1,
+                              /* Dealer */0
                             ],
                             /* :: */[
                               /* tuple */[
                                 /* King */1,
-                                /* Hearts */1
+                                /* Hearts */1,
+                                /* Dealer */0
                               ],
                               /* :: */[
                                 /* tuple */[
                                   /* Queen */2,
-                                  /* Hearts */1
+                                  /* Hearts */1,
+                                  /* Dealer */0
                                 ],
                                 /* :: */[
                                   /* tuple */[
                                     /* Jack */3,
-                                    /* Hearts */1
+                                    /* Hearts */1,
+                                    /* Dealer */0
                                   ],
                                   /* :: */[
                                     /* tuple */[
                                       /* Ten */4,
-                                      /* Hearts */1
+                                      /* Hearts */1,
+                                      /* Dealer */0
                                     ],
                                     /* :: */[
                                       /* tuple */[
                                         /* Nine */5,
-                                        /* Hearts */1
+                                        /* Hearts */1,
+                                        /* Dealer */0
                                       ],
                                       /* :: */[
                                         /* tuple */[
                                           /* Eight */6,
-                                          /* Hearts */1
+                                          /* Hearts */1,
+                                          /* Dealer */0
                                         ],
                                         /* :: */[
                                           /* tuple */[
                                             /* Seven */7,
-                                            /* Hearts */1
+                                            /* Hearts */1,
+                                            /* Dealer */0
                                           ],
                                           /* :: */[
                                             /* tuple */[
                                               /* Six */8,
-                                              /* Hearts */1
+                                              /* Hearts */1,
+                                              /* Dealer */0
                                             ],
                                             /* :: */[
                                               /* tuple */[
                                                 /* Five */9,
-                                                /* Hearts */1
+                                                /* Hearts */1,
+                                                /* Dealer */0
                                               ],
                                               /* :: */[
                                                 /* tuple */[
                                                   /* Four */10,
-                                                  /* Hearts */1
+                                                  /* Hearts */1,
+                                                  /* Dealer */0
                                                 ],
                                                 /* :: */[
                                                   /* tuple */[
                                                     /* Three */11,
-                                                    /* Hearts */1
+                                                    /* Hearts */1,
+                                                    /* Dealer */0
                                                   ],
                                                   /* :: */[
                                                     /* tuple */[
                                                       /* Two */12,
-                                                      /* Hearts */1
+                                                      /* Hearts */1,
+                                                      /* Dealer */0
                                                     ],
                                                     /* :: */[
                                                       /* tuple */[
                                                         /* Ace */0,
-                                                        /* Clubs */3
+                                                        /* Clubs */3,
+                                                        /* Dealer */0
                                                       ],
                                                       /* :: */[
                                                         /* tuple */[
                                                           /* King */1,
-                                                          /* Clubs */3
+                                                          /* Clubs */3,
+                                                          /* Dealer */0
                                                         ],
                                                         /* :: */[
                                                           /* tuple */[
                                                             /* Queen */2,
-                                                            /* Clubs */3
+                                                            /* Clubs */3,
+                                                            /* Dealer */0
                                                           ],
                                                           /* :: */[
                                                             /* tuple */[
                                                               /* Jack */3,
-                                                              /* Clubs */3
+                                                              /* Clubs */3,
+                                                              /* Dealer */0
                                                             ],
                                                             /* :: */[
                                                               /* tuple */[
                                                                 /* Ten */4,
-                                                                /* Clubs */3
+                                                                /* Clubs */3,
+                                                                /* Dealer */0
                                                               ],
                                                               /* :: */[
                                                                 /* tuple */[
                                                                   /* Nine */5,
-                                                                  /* Clubs */3
+                                                                  /* Clubs */3,
+                                                                  /* Dealer */0
                                                                 ],
                                                                 /* :: */[
                                                                   /* tuple */[
                                                                     /* Eight */6,
-                                                                    /* Clubs */3
+                                                                    /* Clubs */3,
+                                                                    /* Dealer */0
                                                                   ],
                                                                   /* :: */[
                                                                     /* tuple */[
                                                                       /* Seven */7,
-                                                                      /* Clubs */3
+                                                                      /* Clubs */3,
+                                                                      /* Dealer */0
                                                                     ],
                                                                     /* :: */[
                                                                       /* tuple */[
                                                                         /* Six */8,
-                                                                        /* Clubs */3
+                                                                        /* Clubs */3,
+                                                                        /* Dealer */0
                                                                       ],
                                                                       /* :: */[
                                                                         /* tuple */[
                                                                           /* Five */9,
-                                                                          /* Clubs */3
+                                                                          /* Clubs */3,
+                                                                          /* Dealer */0
                                                                         ],
                                                                         /* :: */[
                                                                           /* tuple */[
                                                                             /* Four */10,
-                                                                            /* Clubs */3
+                                                                            /* Clubs */3,
+                                                                            /* Dealer */0
                                                                           ],
                                                                           /* :: */[
                                                                             /* tuple */[
                                                                               /* Three */11,
-                                                                              /* Clubs */3
+                                                                              /* Clubs */3,
+                                                                              /* Dealer */0
                                                                             ],
                                                                             /* :: */[
                                                                               /* tuple */[
                                                                                 /* Two */12,
-                                                                                /* Clubs */3
+                                                                                /* Clubs */3,
+                                                                                /* Dealer */0
                                                                               ],
                                                                               /* :: */[
                                                                                 /* tuple */[
                                                                                   /* Ace */0,
-                                                                                  /* Diamonds */2
+                                                                                  /* Diamonds */2,
+                                                                                  /* Dealer */0
                                                                                 ],
                                                                                 /* :: */[
                                                                                   /* tuple */[
                                                                                     /* King */1,
-                                                                                    /* Diamonds */2
+                                                                                    /* Diamonds */2,
+                                                                                    /* Dealer */0
                                                                                   ],
                                                                                   /* :: */[
                                                                                     /* tuple */[
                                                                                       /* Queen */2,
-                                                                                      /* Diamonds */2
+                                                                                      /* Diamonds */2,
+                                                                                      /* Dealer */0
                                                                                     ],
                                                                                     /* :: */[
                                                                                       /* tuple */[
                                                                                         /* Jack */3,
-                                                                                        /* Diamonds */2
+                                                                                        /* Diamonds */2,
+                                                                                        /* Dealer */0
                                                                                       ],
                                                                                       /* :: */[
                                                                                         /* tuple */[
                                                                                           /* Ten */4,
-                                                                                          /* Diamonds */2
+                                                                                          /* Diamonds */2,
+                                                                                          /* Dealer */0
                                                                                         ],
                                                                                         /* :: */[
                                                                                           /* tuple */[
                                                                                             /* Nine */5,
-                                                                                            /* Diamonds */2
+                                                                                            /* Diamonds */2,
+                                                                                            /* Dealer */0
                                                                                           ],
                                                                                           /* :: */[
                                                                                             /* tuple */[
                                                                                               /* Eight */6,
-                                                                                              /* Diamonds */2
+                                                                                              /* Diamonds */2,
+                                                                                              /* Dealer */0
                                                                                             ],
                                                                                             /* :: */[
                                                                                               /* tuple */[
                                                                                                 /* Seven */7,
-                                                                                                /* Diamonds */2
+                                                                                                /* Diamonds */2,
+                                                                                                /* Dealer */0
                                                                                               ],
                                                                                               /* :: */[
                                                                                                 /* tuple */[
                                                                                                   /* Six */8,
-                                                                                                  /* Diamonds */2
+                                                                                                  /* Diamonds */2,
+                                                                                                  /* Dealer */0
                                                                                                 ],
                                                                                                 /* :: */[
                                                                                                   /* tuple */[
                                                                                                     /* Five */9,
-                                                                                                    /* Diamonds */2
+                                                                                                    /* Diamonds */2,
+                                                                                                    /* Dealer */0
                                                                                                   ],
                                                                                                   /* :: */[
                                                                                                     /* tuple */[
                                                                                                       /* Four */10,
-                                                                                                      /* Diamonds */2
+                                                                                                      /* Diamonds */2,
+                                                                                                      /* Dealer */0
                                                                                                     ],
                                                                                                     /* :: */[
                                                                                                       /* tuple */[
                                                                                                         /* Three */11,
-                                                                                                        /* Diamonds */2
+                                                                                                        /* Diamonds */2,
+                                                                                                        /* Dealer */0
                                                                                                       ],
                                                                                                       /* :: */[
                                                                                                         /* tuple */[
                                                                                                           /* Two */12,
-                                                                                                          /* Diamonds */2
+                                                                                                          /* Diamonds */2,
+                                                                                                          /* Dealer */0
                                                                                                         ],
                                                                                                         /* [] */0
                                                                                                       ]
@@ -331,22 +383,6 @@ function suitToString(playingCardSuit) {
         return "D";
     case /* Clubs */3 :
         return "C";
-    case /* NoSuit */4 :
-        return "!";
-    
-  }
-}
-
-function suitToStringUnicode(playingCardSuit) {
-  switch (playingCardSuit) {
-    case /* Spades */0 :
-        return "\u2660";
-    case /* Hearts */1 :
-        return "\u2665";
-    case /* Diamonds */2 :
-        return "\u2666";
-    case /* Clubs */3 :
-        return "\u2663";
     case /* NoSuit */4 :
         return "!";
     
@@ -476,22 +512,26 @@ function shuffleArrayInPlace(arr, seed) {
 
 var setOfCardsDealerPlus1 = Caml_array.caml_make_vect(13, /* tuple */[
       /* NoRank */13,
-      /* NoSuit */4
+      /* NoSuit */4,
+      /* Dealer */0
     ]);
 
 var setOfCardsDealerPlus2 = Caml_array.caml_make_vect(13, /* tuple */[
       /* NoRank */13,
-      /* NoSuit */4
+      /* NoSuit */4,
+      /* Dealer */0
     ]);
 
 var setOfCardsDealerPlus3 = Caml_array.caml_make_vect(13, /* tuple */[
       /* NoRank */13,
-      /* NoSuit */4
+      /* NoSuit */4,
+      /* Dealer */0
     ]);
 
 var setOfCardsDealerPlus0 = Caml_array.caml_make_vect(13, /* tuple */[
       /* NoRank */13,
-      /* NoSuit */4
+      /* NoSuit */4,
+      /* Dealer */0
     ]);
 
 function deal(param) {
@@ -519,7 +559,6 @@ function impureGetRandomSeedUpTo60k(param) {
 exports.orderedListOfCards = orderedListOfCards;
 exports.arrayOfCards = arrayOfCards;
 exports.suitToString = suitToString;
-exports.suitToStringUnicode = suitToStringUnicode;
 exports.rankToString = rankToString;
 exports.cardToString = cardToString;
 exports.cardToValue = cardToValue;

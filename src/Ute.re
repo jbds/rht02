@@ -24,7 +24,12 @@ type playingCardSuit =
   | NoSuit
 ;
 
-type playingCard = (playingCardRank, playingCardSuit);
+type lifecycle =
+  | Dealer
+  | Hand
+;
+
+type playingCard = (playingCardRank, playingCardSuit, lifecycle);
 
 type gameDenomination =
   | NO_TRUMPS
@@ -32,59 +37,59 @@ type gameDenomination =
 ;
 
 /* value definitions */
-let orderedListOfCards = [
-  (Ace,Spades),
-  (King, Spades),
-  (Queen, Spades),
-  (Jack, Spades),
-  (Ten, Spades),
-  (Nine, Spades),
-  (Eight, Spades),
-  (Seven, Spades),
-  (Six, Spades),
-  (Five, Spades),
-  (Four, Spades),
-  (Three, Spades),
-  (Two, Spades),
-  (Ace, Hearts),
-  (King, Hearts),
-  (Queen, Hearts),
-  (Jack, Hearts),
-  (Ten, Hearts),
-  (Nine, Hearts),
-  (Eight, Hearts),
-  (Seven, Hearts),
-  (Six, Hearts),
-  (Five, Hearts),
-  (Four, Hearts),
-  (Three, Hearts),
-  (Two, Hearts),
-  (Ace, Clubs),
-  (King, Clubs),
-  (Queen, Clubs),
-  (Jack, Clubs),
-  (Ten,Clubs),
-  (Nine, Clubs),
-  (Eight,Clubs),
-  (Seven,Clubs),
-  (Six, Clubs),
-  (Five, Clubs),
-  (Four, Clubs),
-  (Three, Clubs),
-  (Two, Clubs),
-  (Ace, Diamonds), 
-  (King, Diamonds),
-  (Queen, Diamonds),
-  (Jack, Diamonds),
-  (Ten, Diamonds), 
-  (Nine, Diamonds),
-  (Eight, Diamonds),
-  (Seven, Diamonds), 
-  (Six, Diamonds),
-  (Five, Diamonds),
-  (Four, Diamonds),
-  (Three, Diamonds),
-  (Two, Diamonds),
+let orderedListOfCards: list(playingCard) = [
+  (Ace,Spades, Dealer),
+  (King, Spades, Dealer),
+  (Queen, Spades, Dealer),
+  (Jack, Spades, Dealer),
+  (Ten, Spades, Dealer),
+  (Nine, Spades, Dealer),
+  (Eight, Spades, Dealer),
+  (Seven, Spades, Dealer),
+  (Six, Spades, Dealer),
+  (Five, Spades, Dealer),
+  (Four, Spades, Dealer),
+  (Three, Spades, Dealer),
+  (Two, Spades, Dealer),
+  (Ace, Hearts, Dealer),
+  (King, Hearts, Dealer),
+  (Queen, Hearts, Dealer),
+  (Jack, Hearts, Dealer),
+  (Ten, Hearts, Dealer),
+  (Nine, Hearts, Dealer),
+  (Eight, Hearts, Dealer),
+  (Seven, Hearts, Dealer),
+  (Six, Hearts, Dealer),
+  (Five, Hearts, Dealer),
+  (Four, Hearts, Dealer),
+  (Three, Hearts, Dealer),
+  (Two, Hearts, Dealer),
+  (Ace, Clubs, Dealer),
+  (King, Clubs, Dealer),
+  (Queen, Clubs, Dealer),
+  (Jack, Clubs, Dealer),
+  (Ten,Clubs, Dealer),
+  (Nine, Clubs, Dealer),
+  (Eight,Clubs, Dealer),
+  (Seven,Clubs, Dealer),
+  (Six, Clubs, Dealer),
+  (Five, Clubs, Dealer),
+  (Four, Clubs, Dealer),
+  (Three, Clubs, Dealer),
+  (Two, Clubs, Dealer),
+  (Ace, Diamonds, Dealer), 
+  (King, Diamonds, Dealer),
+  (Queen, Diamonds, Dealer),
+  (Jack, Diamonds, Dealer),
+  (Ten, Diamonds, Dealer), 
+  (Nine, Diamonds, Dealer),
+  (Eight, Diamonds, Dealer),
+  (Seven, Diamonds, Dealer), 
+  (Six, Diamonds, Dealer),
+  (Five, Diamonds, Dealer),
+  (Four, Diamonds, Dealer),
+  (Three, Diamonds, Dealer),
+  (Two, Diamonds, Dealer),
 ];
 
 /* mutable */
@@ -110,15 +115,15 @@ let suitToString(playingCardSuit) = {
   }
 };
 
-let suitToStringUnicode(playingCardSuit) = {
-  switch (playingCardSuit) {
-  | Spades => {js|\u2660|js}
-  | Hearts => {js|\u2665|js}
-  | Diamonds => {js|\u2666|js}
-  | Clubs => {js|\u2663|js}
-  | NoSuit => "!"
-  }
-};
+// let suitToStringUnicode(playingCardSuit) = {
+//   switch (playingCardSuit) {
+//   | Spades => {js|\u2660|js}
+//   | Hearts => {js|\u2665|js}
+//   | Diamonds => {js|\u2666|js}
+//   | Clubs => {js|\u2663|js}
+//   | NoSuit => "!"
+//   }
+// };
 
 
 let rankToString(playingCardRank) = {
@@ -140,11 +145,12 @@ let rankToString(playingCardRank) = {
   }
 };
 
-let cardToString(playingCard) = {
-  rankToString(fst(playingCard)) ++ suitToString(snd(playingCard))
+let cardToString(playingCard: playingCard) = {
+  let (fst, snd, _) = playingCard;
+  rankToString(fst) ++ suitToString(snd)
 };
 
-let cardToValue(gameDenomination, playingCard) = {
+let cardToValue(gameDenomination, playingCard: playingCard) = {
   let suitToValue(playingCardSuit, gameDenomination) = {
     switch (playingCardSuit, gameDenomination) {
     | (Spades, _) => 42
@@ -175,7 +181,8 @@ let cardToValue(gameDenomination, playingCard) = {
     | NoRank => 0
     }
   };
-  rankToValue(fst(playingCard)) + suitToValue(snd(playingCard), gameDenomination)
+  let (fst, snd, _) = playingCard;
+  rankToValue(fst) + suitToValue(snd, gameDenomination)
 };
 
 let compareCardValue= (denom, cardA, cardB) => {
@@ -184,6 +191,7 @@ let compareCardValue= (denom, cardA, cardB) => {
 
 
 /* Fisher–Yates shuffle */
+/* polymorhic function */
 let shuffleArrayInPlace = (arr, seed) => {
   Random.init(seed);
   for (n in Array.length(arr) - 1 downto 1) {
@@ -194,10 +202,10 @@ let shuffleArrayInPlace = (arr, seed) => {
   };
 };
 
-let setOfCardsDealerPlus1 = Array.make(13, (NoRank, NoSuit));
-let setOfCardsDealerPlus2 = Array.make(13, (NoRank, NoSuit));
-let setOfCardsDealerPlus3 = Array.make(13, (NoRank, NoSuit));
-let setOfCardsDealerPlus0 = Array.make(13, (NoRank, NoSuit));
+let setOfCardsDealerPlus1 = Array.make(13, (NoRank, NoSuit, Dealer));
+let setOfCardsDealerPlus2 = Array.make(13, (NoRank, NoSuit, Dealer));
+let setOfCardsDealerPlus3 = Array.make(13, (NoRank, NoSuit, Dealer));
+let setOfCardsDealerPlus0 = Array.make(13, (NoRank, NoSuit, Dealer));
 
 
 let deal = () => {
