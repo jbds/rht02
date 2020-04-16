@@ -16,10 +16,11 @@ let impureShuffleOfPack = () =>
 {
   /* impure! */
   let seed = impureGetRandomSeedUpTo60k();
+  //Js.log(Array.map(cardToString,arrayOfCards));
   /* mutation! */
   let () = shuffleArrayInPlace(arrayOfCards, seed);
   /* show shuffled pack of cards, dependent upon seed value above*/
-  /* Js.log(Array.map(cardToString, arrayOfCards)); */
+  Js.log(Array.map(cardToString, arrayOfCards));
   /* deal to DealerPlus1, DealerPlus2, DealerPlus3, DealerPlus0 */
   let () = deal();
   /* Js.log(Array.map(cardToString, setOfCardsDealerPlus1)); 
