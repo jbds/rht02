@@ -1,5 +1,6 @@
 // state and reducer are used by the top level component App
 
+// this is defined in Shuffle module to avoid a cyclic dependency
 // type state = {
 //   dealerPlus1: array((int, string)),
 //   dealerPlus2: array((int, string)),
