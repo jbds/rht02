@@ -1,10 +1,10 @@
 open Ute;
 
 type state = {
-  cardsNorth: array((int, string)),
-  cardsEast: array((int, string)),
-  cardsSouth: array((int, string)),
-  cardsWest: array((int, string)),
+  cardsNorth: array((int, (string, lifecycle))),
+  cardsEast: array((int, (string, lifecycle))),
+  cardsSouth: array((int, (string, lifecycle))),
+  cardsWest: array((int, (string, lifecycle))),
   northIsFlipped: bool,
   eastIsFlipped: bool,
   southIsFlipped: bool,
@@ -24,45 +24,40 @@ let impureShuffleOfPack = () =>
   /* we have to know whether to deal the cards to N,E,S or W first */
   /* impure - requires user input  of  dealer N, E, S or W */
   // Set to West for testing
-  let loc = East;
+  let loc = West;
   let () = allocateShuffledToLocation(loc);
   let denomination = NO_TRUMPS; /*SUIT(Clubs);*/
   /* Js.log(compareCardValue((Ace, Hearts),(King, Spades), denomination)); */
   /* mutation */
   /* curried function of 3 params returns func of 2 params */
-  let () = Array.sort(compareCardValue(denomination), setOfCardsDealerPlus1);
-  let () = Array.sort(compareCardValue(denomination), setOfCardsDealerPlus2);
-  let () = Array.sort(compareCardValue(denomination), setOfCardsDealerPlus3);
-  let () = Array.sort(compareCardValue(denomination), setOfCardsDealerPlus0);
+  let () = Array.sort(compareCardValue(denomination), cardsNorth);
+  let () = Array.sort(compareCardValue(denomination), cardsEast);
+  let () = Array.sort(compareCardValue(denomination), cardsSouth);
+  let () = Array.sort(compareCardValue(denomination), cardsWest);
   // js array values are not helpful!
   //same here - cardToValue expects 2 params, we give it one and it returns
   // a function expecting a single tuple param
   //Js.log(Array.map(cardToValue(denomination), setOfCardsDealerPlus1));
-  // to work with filenames this cannot use the unicode symbols
-  // Js.log(Array.map(cardToString, setOfCardsDealerPlus1)); 
-  // Js.log(Array.map(cardToString, setOfCardsDealerPlus2)); 
-  // Js.log(Array.map(cardToString, setOfCardsDealerPlus3)); 
-  // Js.log(Array.map(cardToString, setOfCardsDealerPlus0)); 
 
-  let setOfCardsAsStringDealerPlus1 = Array.map(cardToString, setOfCardsDealerPlus1);
-  let setOfCardsAsStringDealerPlus2 = Array.map(cardToString, setOfCardsDealerPlus2);
-  let setOfCardsAsStringDealerPlus3 = Array.map(cardToString, setOfCardsDealerPlus3);
-  let setOfCardsAsStringDealerPlus0 = Array.map(cardToString, setOfCardsDealerPlus0);
+  let cardsNorthAsString = Array.map(cardToString, cardsNorth);
+  let cardsEastAsString = Array.map(cardToString, cardsEast);
+  let cardsSouthAsString = Array.map(cardToString, cardsSouth);
+  let cardsWestAsString = Array.map(cardToString, cardsWest);
 
-  let setOfCardsWithIndexDealerPlus1 = Array.mapi((k, v) => (k, v), setOfCardsAsStringDealerPlus1);
-  let setOfCardsWithIndexDealerPlus2 = Array.mapi((k, v) => (k, v), setOfCardsAsStringDealerPlus2);
-  let setOfCardsWithIndexDealerPlus3 = Array.mapi((k, v) => (k, v), setOfCardsAsStringDealerPlus3);
-  let setOfCardsWithIndexDealerPlus0 = Array.mapi((k, v) => (k, v), setOfCardsAsStringDealerPlus0);
+  let cardsNorthWithIndex = Array.mapi((k, v) => (k, v), cardsNorthAsString);
+  let cardsEastWithIndex = Array.mapi((k, v) => (k, v), cardsEastAsString);
+  let cardsSouthWithIndex = Array.mapi((k, v) => (k, v), cardsSouthAsString);
+  let cardsWestWithIndex = Array.mapi((k, v) => (k, v), cardsWestAsString);
 
 
   //Js.log(setOfCardsWithIndexDealerPlus1);
 
   // return the four sets of cards as one record aka object
   {
-    cardsNorth: setOfCardsWithIndexDealerPlus1, 
-    cardsEast: setOfCardsWithIndexDealerPlus2, 
-    cardsSouth: setOfCardsWithIndexDealerPlus3, 
-    cardsWest: setOfCardsWithIndexDealerPlus0, 
+    cardsNorth: cardsNorthWithIndex, 
+    cardsEast: cardsEastWithIndex, 
+    cardsSouth: cardsSouthWithIndex, 
+    cardsWest: cardsWestWithIndex, 
     northIsFlipped: false,
     eastIsFlipped: true,
     southIsFlipped: true,

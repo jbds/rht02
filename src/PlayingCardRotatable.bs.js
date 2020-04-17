@@ -15,6 +15,7 @@ function PlayingCardRotatable(Props) {
   var parentElementWidthPx = Props.parentElementWidthPx;
   var parentElementHeightPx = Props.parentElementHeightPx;
   var isFlipSide = Props.isFlipSide;
+  var lifecycle = Props.lifecycle;
   var cardHalfWidthPx = parentElementHeightPx * 25.0 / (100.0 * 1.56 * 2.0);
   var leftAdjustedVw = leftVw * 0.8 - cardHalfWidthPx * 100.0 / parentElementWidthPx;
   var cardHalfHeightPx = parentElementHeightPx * 25.0 / (100.0 * 2.0);
@@ -23,16 +24,21 @@ function PlayingCardRotatable(Props) {
   var transformB = "rotate(" + ((3.75 * (cardIndex - 0.0)).toString() + "deg)");
   var transformC = "translate(" + ((-cardHalfWidthPx).toString() + ("px, " + ((cardHalfWidthPx * 4.25).toString() + "px)")));
   var adjustedFilePath = isFlipSide ? "./images/1B.svg" : filePath;
-  return React.createElement("img", {
-              style: {
-                height: (25.0).toString() + "vh",
-                left: leftAdjustedVw.toString() + "vw",
-                position: "absolute",
-                top: topAdj.toString() + "vh",
-                transform: transformC + (" " + (transformB + (" " + transformA)))
-              },
-              src: adjustedFilePath
-            });
+  var i = React.createElement("img", {
+        style: {
+          height: (25.0).toString() + "vh",
+          left: leftAdjustedVw.toString() + "vw",
+          position: "absolute",
+          top: topAdj.toString() + "vh",
+          transform: transformC + (" " + (transformB + (" " + transformA)))
+        },
+        src: adjustedFilePath
+      });
+  if (lifecycle === /* Hand */1) {
+    return i;
+  } else {
+    return null;
+  }
 }
 
 var cardHeightVh = 25.0;

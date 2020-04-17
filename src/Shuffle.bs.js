@@ -7,52 +7,52 @@ var Ute$ReactHooksTemplate = require("./Ute.bs.js");
 function impureShuffleOfPack(param) {
   Ute$ReactHooksTemplate.impureGetRandomSeedUpTo60k(undefined);
   console.log($$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.arrayOfCards));
-  Ute$ReactHooksTemplate.allocateShuffledToLocation(/* East */1);
+  Ute$ReactHooksTemplate.allocateShuffledToLocation(/* West */3);
   $$Array.sort((function (param, param$1) {
           return Ute$ReactHooksTemplate.compareCardValue(/* NO_TRUMPS */0, param, param$1);
-        }), Ute$ReactHooksTemplate.setOfCardsDealerPlus1);
+        }), Ute$ReactHooksTemplate.cardsNorth);
   $$Array.sort((function (param, param$1) {
           return Ute$ReactHooksTemplate.compareCardValue(/* NO_TRUMPS */0, param, param$1);
-        }), Ute$ReactHooksTemplate.setOfCardsDealerPlus2);
+        }), Ute$ReactHooksTemplate.cardsEast);
   $$Array.sort((function (param, param$1) {
           return Ute$ReactHooksTemplate.compareCardValue(/* NO_TRUMPS */0, param, param$1);
-        }), Ute$ReactHooksTemplate.setOfCardsDealerPlus3);
+        }), Ute$ReactHooksTemplate.cardsSouth);
   $$Array.sort((function (param, param$1) {
           return Ute$ReactHooksTemplate.compareCardValue(/* NO_TRUMPS */0, param, param$1);
-        }), Ute$ReactHooksTemplate.setOfCardsDealerPlus0);
-  var setOfCardsAsStringDealerPlus1 = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus1);
-  var setOfCardsAsStringDealerPlus2 = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus2);
-  var setOfCardsAsStringDealerPlus3 = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus3);
-  var setOfCardsAsStringDealerPlus0 = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.setOfCardsDealerPlus0);
-  var setOfCardsWithIndexDealerPlus1 = $$Array.mapi((function (k, v) {
+        }), Ute$ReactHooksTemplate.cardsWest);
+  var cardsNorthAsString = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.cardsNorth);
+  var cardsEastAsString = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.cardsEast);
+  var cardsSouthAsString = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.cardsSouth);
+  var cardsWestAsString = $$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.cardsWest);
+  var cardsNorthWithIndex = $$Array.mapi((function (k, v) {
           return /* tuple */[
                   k,
                   v
                 ];
-        }), setOfCardsAsStringDealerPlus1);
-  var setOfCardsWithIndexDealerPlus2 = $$Array.mapi((function (k, v) {
+        }), cardsNorthAsString);
+  var cardsEastWithIndex = $$Array.mapi((function (k, v) {
           return /* tuple */[
                   k,
                   v
                 ];
-        }), setOfCardsAsStringDealerPlus2);
-  var setOfCardsWithIndexDealerPlus3 = $$Array.mapi((function (k, v) {
+        }), cardsEastAsString);
+  var cardsSouthWithIndex = $$Array.mapi((function (k, v) {
           return /* tuple */[
                   k,
                   v
                 ];
-        }), setOfCardsAsStringDealerPlus3);
-  var setOfCardsWithIndexDealerPlus0 = $$Array.mapi((function (k, v) {
+        }), cardsSouthAsString);
+  var cardsWestWithIndex = $$Array.mapi((function (k, v) {
           return /* tuple */[
                   k,
                   v
                 ];
-        }), setOfCardsAsStringDealerPlus0);
+        }), cardsWestAsString);
   return {
-          cardsNorth: setOfCardsWithIndexDealerPlus1,
-          cardsEast: setOfCardsWithIndexDealerPlus2,
-          cardsSouth: setOfCardsWithIndexDealerPlus3,
-          cardsWest: setOfCardsWithIndexDealerPlus0,
+          cardsNorth: cardsNorthWithIndex,
+          cardsEast: cardsEastWithIndex,
+          cardsSouth: cardsSouthWithIndex,
+          cardsWest: cardsWestWithIndex,
           northIsFlipped: false,
           eastIsFlipped: true,
           southIsFlipped: true,

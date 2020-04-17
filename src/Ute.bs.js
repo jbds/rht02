@@ -33,7 +33,7 @@ var orderedListOfCards = /* :: */[
           /* tuple */[
             /* Ten */4,
             /* Spades */0,
-            /* Dealer */0
+            /* Hand */1
           ],
           /* :: */[
             /* tuple */[
@@ -424,7 +424,10 @@ function rankToString(playingCardRank) {
 }
 
 function cardToString(playingCard) {
-  return rankToString(playingCard[0]) + suitToString(playingCard[1]);
+  return /* tuple */[
+          rankToString(playingCard[0]) + suitToString(playingCard[1]),
+          playingCard[2]
+        ];
 }
 
 function cardToValue(gameDenomination, playingCard) {
@@ -510,25 +513,25 @@ function shuffleArrayInPlace(arr, seed) {
   
 }
 
-var setOfCardsDealerPlus1 = Caml_array.caml_make_vect(13, /* tuple */[
+var cardsNorth = Caml_array.caml_make_vect(13, /* tuple */[
       /* NoRank */13,
       /* NoSuit */4,
       /* Dealer */0
     ]);
 
-var setOfCardsDealerPlus2 = Caml_array.caml_make_vect(13, /* tuple */[
+var cardsEast = Caml_array.caml_make_vect(13, /* tuple */[
       /* NoRank */13,
       /* NoSuit */4,
       /* Dealer */0
     ]);
 
-var setOfCardsDealerPlus3 = Caml_array.caml_make_vect(13, /* tuple */[
+var cardsSouth = Caml_array.caml_make_vect(13, /* tuple */[
       /* NoRank */13,
       /* NoSuit */4,
       /* Dealer */0
     ]);
 
-var setOfCardsDealerPlus0 = Caml_array.caml_make_vect(13, /* tuple */[
+var cardsWest = Caml_array.caml_make_vect(13, /* tuple */[
       /* NoRank */13,
       /* NoSuit */4,
       /* Dealer */0
@@ -537,15 +540,15 @@ var setOfCardsDealerPlus0 = Caml_array.caml_make_vect(13, /* tuple */[
 function shuffleByModulo(k) {
   for(var i = 0; i <= 51; ++i){
     if (i % 4 === k) {
-      Caml_array.caml_array_set(setOfCardsDealerPlus1, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
-    } else if (i % 4 === k) {
-      Caml_array.caml_array_set(setOfCardsDealerPlus2, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
-    } else if (i % 4 === k) {
-      Caml_array.caml_array_set(setOfCardsDealerPlus3, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
-    } else if (i % 4 === k) {
-      Caml_array.caml_array_set(setOfCardsDealerPlus0, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
+      Caml_array.caml_array_set(cardsNorth, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
+    } else if (i % 4 === (k + 1 | 0)) {
+      Caml_array.caml_array_set(cardsEast, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
+    } else if (i % 4 === (k + 2 | 0)) {
+      Caml_array.caml_array_set(cardsSouth, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
+    } else if (i % 4 === (k + 3 | 0)) {
+      Caml_array.caml_array_set(cardsWest, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
     } else {
-      console.log("should be unreachable");
+      console.log("should be unreachable, i=" + String(i));
     }
   }
   
@@ -578,10 +581,10 @@ exports.cardToString = cardToString;
 exports.cardToValue = cardToValue;
 exports.compareCardValue = compareCardValue;
 exports.shuffleArrayInPlace = shuffleArrayInPlace;
-exports.setOfCardsDealerPlus1 = setOfCardsDealerPlus1;
-exports.setOfCardsDealerPlus2 = setOfCardsDealerPlus2;
-exports.setOfCardsDealerPlus3 = setOfCardsDealerPlus3;
-exports.setOfCardsDealerPlus0 = setOfCardsDealerPlus0;
+exports.cardsNorth = cardsNorth;
+exports.cardsEast = cardsEast;
+exports.cardsSouth = cardsSouth;
+exports.cardsWest = cardsWest;
 exports.shuffleByModulo = shuffleByModulo;
 exports.allocateShuffledToLocation = allocateShuffledToLocation;
 exports.impureGetRandomSeedUpTo60k = impureGetRandomSeedUpTo60k;

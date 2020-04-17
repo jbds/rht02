@@ -20,6 +20,7 @@ let make =
     ~parentElementWidthPx: float, 
     ~parentElementHeightPx: float,
     ~isFlipSide: bool,
+    ~lifecycle: Ute.lifecycle
   ) 
 => 
 {
@@ -36,6 +37,7 @@ let make =
   // decide whether to show upside or flipside
   let adjustedFilePath = isFlipSide ? "./images/1B.svg" : filePath;
   // position absolute is misleading/irrelevant, because we are using vw and vh units for left and top placement
+  let i =
   <img 
     src={adjustedFilePath} 
     style=(
@@ -48,5 +50,7 @@ let make =
         ()
       )
     )
-  />
+  />;
+  // ReasonReact.null is the render 'no op'
+  lifecycle == Hand ? i : ReasonReact.null;
 };

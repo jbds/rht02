@@ -18,6 +18,7 @@ let make = () => {
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.southIsFlipped
+                lifecycle=Dealer
               />
     </div>  
     // SOUTH FLIP 
@@ -44,6 +45,7 @@ let make = () => {
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.westIsFlipped
+                lifecycle=Dealer
               />
     </div>  
     // WEST FLIP
@@ -62,9 +64,9 @@ let make = () => {
     // NORTH CARD
     <div>
       (
-        React.array(
+        ReasonReact.array(
           Array.map(
-            ((index, filePath)) =>
+            ((index, (filePath, lc))) =>
               <PlayingCardRotatable 
                 key={string_of_int(index)}
                 cardIndex=index
@@ -74,6 +76,7 @@ let make = () => {
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.northIsFlipped
+                lifecycle=lc
               />
               ,
               state.cardsNorth
@@ -105,6 +108,7 @@ let make = () => {
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.eastIsFlipped
+                lifecycle=Dealer
               />
     </div>  
     // EAST FLIP 

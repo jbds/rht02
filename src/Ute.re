@@ -50,7 +50,7 @@ let orderedListOfCards: list(playingCard) = [
   (King, Spades, Dealer),
   (Queen, Spades, Dealer),
   (Jack, Spades, Dealer),
-  (Ten, Spades, Dealer),
+  (Ten, Spades, Hand),
   (Nine, Spades, Dealer),
   (Eight, Spades, Dealer),
   (Seven, Spades, Dealer),
@@ -154,10 +154,11 @@ let rankToString(playingCardRank) = {
 };
 
 let cardToString(playingCard: playingCard) = {
-  let (fst, snd, _) = playingCard;
-  rankToString(fst) ++ suitToString(snd)
+  let (fst, snd, lc) = playingCard;
+  (rankToString(fst) ++ suitToString(snd), lc)
 };
 
+// TO DO - this sort is for the hand sort, not the scoring
 let cardToValue(gameDenomination, playingCard: playingCard) = {
   let suitToValue(playingCardSuit, gameDenomination) = {
     switch (playingCardSuit, gameDenomination) {
@@ -210,23 +211,23 @@ let shuffleArrayInPlace = (arr, seed) => {
   };
 };
 
-let setOfCardsDealerPlus1 = Array.make(13, (NoRank, NoSuit, Dealer));
-let setOfCardsDealerPlus2 = Array.make(13, (NoRank, NoSuit, Dealer));
-let setOfCardsDealerPlus3 = Array.make(13, (NoRank, NoSuit, Dealer));
-let setOfCardsDealerPlus0 = Array.make(13, (NoRank, NoSuit, Dealer));
+let cardsNorth = Array.make(13, (NoRank, NoSuit, Dealer));
+let cardsEast = Array.make(13, (NoRank, NoSuit, Dealer));
+let cardsSouth = Array.make(13, (NoRank, NoSuit, Dealer));
+let cardsWest = Array.make(13, (NoRank, NoSuit, Dealer));
 
 let shuffleByModulo = (k) => {
   for (i in 0 to 51) {
     if (i mod 4 == k){
-      setOfCardsDealerPlus1[i/4] = arrayOfCards[i];
-    } else if (i mod 4 == k) {
-      setOfCardsDealerPlus2[i/4] = arrayOfCards[i];
-    } else if (i mod 4 == k) {
-      setOfCardsDealerPlus3[i/4] = arrayOfCards[i];
-    } else if (i mod 4 == k){
-      setOfCardsDealerPlus0[i/4] = arrayOfCards[i];
+      cardsNorth[i/4] = arrayOfCards[i];
+    } else if (i mod 4 == k + 1) {
+      cardsEast[i/4] = arrayOfCards[i];
+    } else if (i mod 4 == k + 2) {
+      cardsSouth[i/4] = arrayOfCards[i];
+    } else if (i mod 4 == k + 3){
+      cardsWest[i/4] = arrayOfCards[i];
     } else {
-      Js.log("should be unreachable");
+      Js.log("should be unreachable, i=" ++ string_of_int(i));
     }
   };
 };

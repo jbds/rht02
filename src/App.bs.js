@@ -23,6 +23,7 @@ function App(Props) {
                       parentElementWidthPx: window.innerWidth,
                       parentElementHeightPx: window.innerHeight,
                       isFlipSide: state.southIsFlipped,
+                      lifecycle: /* Dealer */0,
                       key: String(0)
                     })), React.createElement("div", {
                   style: {
@@ -41,6 +42,7 @@ function App(Props) {
                       parentElementWidthPx: window.innerWidth,
                       parentElementHeightPx: window.innerHeight,
                       isFlipSide: state.westIsFlipped,
+                      lifecycle: /* Dealer */0,
                       key: String(0)
                     })), React.createElement("div", {
                   style: {
@@ -52,15 +54,17 @@ function App(Props) {
                       dispatch: dispatch,
                       location: /* West */3
                     })), React.createElement("div", undefined, $$Array.map((function (param) {
+                        var match = param[1];
                         var index = param[0];
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                                     cardIndex: index,
-                                    filePath: "./images/" + (param[1] + ".svg"),
+                                    filePath: "./images/" + (match[0] + ".svg"),
                                     leftVw: 50.0,
                                     topVh: 25.0,
                                     parentElementWidthPx: window.innerWidth,
                                     parentElementHeightPx: window.innerHeight,
                                     isFlipSide: state.northIsFlipped,
+                                    lifecycle: match[1],
                                     key: String(index)
                                   });
                       }), state.cardsNorth)), React.createElement("div", {
@@ -80,6 +84,7 @@ function App(Props) {
                       parentElementWidthPx: window.innerWidth,
                       parentElementHeightPx: window.innerHeight,
                       isFlipSide: state.eastIsFlipped,
+                      lifecycle: /* Dealer */0,
                       key: String(0)
                     })), React.createElement("div", {
                   style: {
