@@ -17,7 +17,7 @@ function Sidebar1(Props) {
                     marginTop: "1vh"
                   },
                   onClick: (function (_e) {
-                      return Curry._1(dispatch, /* Action2 */1);
+                      return Curry._1(dispatch, /* Shuffle */1);
                     })
                 }, "Shuffle"));
 }

@@ -12,17 +12,18 @@
 //   plus0IsFlipped: bool,
 // };
 
-type location =
-  | North
-  | East
-  | South
-  | West
-;
+// this is defined in Shuffle module to avoid a cyclic dependency
+// type location =
+//   | North
+//   | East
+//   | South
+//   | West
+// ;
 
 type action =
   | Action1
-  | Action2
-  | Flip (location)
+  | Shuffle
+  | Flip (Ute.location)
   | HideAllCards
   | ShowAllCards
 ;
@@ -49,7 +50,7 @@ let reducer = (state, action) =>
         Js.log("Action1 trace")
         state;
       }
-      | Action2 => {
+      | Shuffle => {
           let fourSetsOfCards = Shuffle.impureShuffleOfPack();
           Js.log(fourSetsOfCards);
           // return the merged state

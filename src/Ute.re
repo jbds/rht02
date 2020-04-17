@@ -29,6 +29,14 @@ type lifecycle =
   | Hand
 ;
 
+type location =
+  | North
+  | East
+  | South
+  | West
+;
+
+
 type playingCard = (playingCardRank, playingCardSuit, lifecycle);
 
 type gameDenomination =
@@ -207,22 +215,32 @@ let setOfCardsDealerPlus2 = Array.make(13, (NoRank, NoSuit, Dealer));
 let setOfCardsDealerPlus3 = Array.make(13, (NoRank, NoSuit, Dealer));
 let setOfCardsDealerPlus0 = Array.make(13, (NoRank, NoSuit, Dealer));
 
-
-let deal = () => {
+let shuffleByModulo = (k) => {
   for (i in 0 to 51) {
-    if (i mod 4 == 0){
+    if (i mod 4 == k){
       setOfCardsDealerPlus1[i/4] = arrayOfCards[i];
-    } else if (i mod 4 == 1) {
+    } else if (i mod 4 == k) {
       setOfCardsDealerPlus2[i/4] = arrayOfCards[i];
-    } else if (i mod 4 == 2) {
+    } else if (i mod 4 == k) {
       setOfCardsDealerPlus3[i/4] = arrayOfCards[i];
-    } else if (i mod 4 == 3){
+    } else if (i mod 4 == k){
       setOfCardsDealerPlus0[i/4] = arrayOfCards[i];
     } else {
       Js.log("should be unreachable");
     }
+  };
+};
+
+// dealer deals to next clockwise location
+let allocateShuffledToLocation = (loc) => {
+  switch (loc) {
+    | North => shuffleByModulo(3)
+    | East => shuffleByModulo(2)
+    | South => shuffleByModulo(1)
+    | West => shuffleByModulo(0)
   }
 };
+
 
 
 

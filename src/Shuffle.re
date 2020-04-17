@@ -11,23 +11,21 @@ type state = {
   westIsFlipped: bool,
 };
 
-
 let impureShuffleOfPack = () =>
 {
   /* impure! */
   let seed = impureGetRandomSeedUpTo60k();
   //Js.log(Array.map(cardToString,arrayOfCards));
   /* mutation! */
-  let () = shuffleArrayInPlace(arrayOfCards, seed);
+  // skip if we want repeatable set of cards
+  //let () = shuffleArrayInPlace(arrayOfCards, seed);
   /* show shuffled pack of cards, dependent upon seed value above*/
   Js.log(Array.map(cardToString, arrayOfCards));
-  /* deal to DealerPlus1, DealerPlus2, DealerPlus3, DealerPlus0 */
-  let () = deal();
-  /* Js.log(Array.map(cardToString, setOfCardsDealerPlus1)); 
-  Js.log(Array.map(cardToString, setOfCardsDealerPlus2));
-  Js.log(Array.map(cardToString, setOfCardsDealerPlus3));
-  Js.log(Array.map(cardToString, setOfCardsDealerPlus0));  */
-  /* Js.log(Array.map(cardToValue, setOfCardsDealerPlus1)); */
+  /* we have to know whether to deal the cards to N,E,S or W first */
+  /* impure - requires user input  of  dealer N, E, S or W */
+  // Set to West for testing
+  let loc = East;
+  let () = allocateShuffledToLocation(loc);
   let denomination = NO_TRUMPS; /*SUIT(Clubs);*/
   /* Js.log(compareCardValue((Ace, Hearts),(King, Spades), denomination)); */
   /* mutation */
@@ -65,7 +63,7 @@ let impureShuffleOfPack = () =>
     cardsEast: setOfCardsWithIndexDealerPlus2, 
     cardsSouth: setOfCardsWithIndexDealerPlus3, 
     cardsWest: setOfCardsWithIndexDealerPlus0, 
-    northIsFlipped: true,
+    northIsFlipped: false,
     eastIsFlipped: true,
     southIsFlipped: true,
     westIsFlipped: true,

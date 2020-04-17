@@ -32,7 +32,7 @@ function reducer(state, action) {
       case /* Action1 */0 :
           console.log("Action1 trace");
           return state;
-      case /* Action2 */1 :
+      case /* Shuffle */1 :
           var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(undefined);
           console.log(fourSetsOfCards);
           return fourSetsOfCards;

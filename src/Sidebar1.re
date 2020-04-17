@@ -4,7 +4,7 @@ let s2e = React.string;
 let make = (~dispatch: Global.action => unit) => {
   <div>
     <button 
-    onClick=((_e) => dispatch(Action2)) //Js.log("Cicked LogToConsole"))//
+    onClick=((_e) => dispatch(Shuffle)) //Js.log("Cicked LogToConsole"))//
     style=(
       ReactDOMRe.Style.make(
         ~color={"Green"}, 

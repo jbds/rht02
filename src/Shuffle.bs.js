@@ -5,10 +5,9 @@ var $$Array = require("bs-platform/lib/js/array.js");
 var Ute$ReactHooksTemplate = require("./Ute.bs.js");
 
 function impureShuffleOfPack(param) {
-  var seed = Ute$ReactHooksTemplate.impureGetRandomSeedUpTo60k(undefined);
-  Ute$ReactHooksTemplate.shuffleArrayInPlace(Ute$ReactHooksTemplate.arrayOfCards, seed);
+  Ute$ReactHooksTemplate.impureGetRandomSeedUpTo60k(undefined);
   console.log($$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.arrayOfCards));
-  Ute$ReactHooksTemplate.deal(undefined);
+  Ute$ReactHooksTemplate.allocateShuffledToLocation(/* East */1);
   $$Array.sort((function (param, param$1) {
           return Ute$ReactHooksTemplate.compareCardValue(/* NO_TRUMPS */0, param, param$1);
         }), Ute$ReactHooksTemplate.setOfCardsDealerPlus1);
@@ -54,7 +53,7 @@ function impureShuffleOfPack(param) {
           cardsEast: setOfCardsWithIndexDealerPlus2,
           cardsSouth: setOfCardsWithIndexDealerPlus3,
           cardsWest: setOfCardsWithIndexDealerPlus0,
-          northIsFlipped: true,
+          northIsFlipped: false,
           eastIsFlipped: true,
           southIsFlipped: true,
           westIsFlipped: true

@@ -534,21 +534,35 @@ var setOfCardsDealerPlus0 = Caml_array.caml_make_vect(13, /* tuple */[
       /* Dealer */0
     ]);
 
-function deal(param) {
+function shuffleByModulo(k) {
   for(var i = 0; i <= 51; ++i){
-    if (i % 4 === 0) {
+    if (i % 4 === k) {
       Caml_array.caml_array_set(setOfCardsDealerPlus1, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
-    } else if (i % 4 === 1) {
+    } else if (i % 4 === k) {
       Caml_array.caml_array_set(setOfCardsDealerPlus2, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
-    } else if (i % 4 === 2) {
+    } else if (i % 4 === k) {
       Caml_array.caml_array_set(setOfCardsDealerPlus3, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
-    } else if (i % 4 === 3) {
+    } else if (i % 4 === k) {
       Caml_array.caml_array_set(setOfCardsDealerPlus0, i / 4 | 0, Caml_array.caml_array_get(arrayOfCards, i));
     } else {
       console.log("should be unreachable");
     }
   }
   
+}
+
+function allocateShuffledToLocation(loc) {
+  switch (loc) {
+    case /* North */0 :
+        return shuffleByModulo(3);
+    case /* East */1 :
+        return shuffleByModulo(2);
+    case /* South */2 :
+        return shuffleByModulo(1);
+    case /* West */3 :
+        return shuffleByModulo(0);
+    
+  }
 }
 
 function impureGetRandomSeedUpTo60k(param) {
@@ -568,6 +582,7 @@ exports.setOfCardsDealerPlus1 = setOfCardsDealerPlus1;
 exports.setOfCardsDealerPlus2 = setOfCardsDealerPlus2;
 exports.setOfCardsDealerPlus3 = setOfCardsDealerPlus3;
 exports.setOfCardsDealerPlus0 = setOfCardsDealerPlus0;
-exports.deal = deal;
+exports.shuffleByModulo = shuffleByModulo;
+exports.allocateShuffledToLocation = allocateShuffledToLocation;
 exports.impureGetRandomSeedUpTo60k = impureGetRandomSeedUpTo60k;
 /* arrayOfCards Not a pure module */
