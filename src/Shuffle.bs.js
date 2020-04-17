@@ -54,9 +54,9 @@ function impureShuffleOfPack(param) {
           cardsSouth: cardsSouthWithIndex,
           cardsWest: cardsWestWithIndex,
           northIsFlipped: false,
-          eastIsFlipped: true,
-          southIsFlipped: true,
-          westIsFlipped: true
+          eastIsFlipped: false,
+          southIsFlipped: false,
+          westIsFlipped: false
         };
 }
 

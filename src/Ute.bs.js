@@ -9,25 +9,25 @@ var orderedListOfCards = /* :: */[
   /* tuple */[
     /* Ace */0,
     /* Spades */0,
-    /* Dealer */0
+    /* Hand */1
   ],
   /* :: */[
     /* tuple */[
       /* King */1,
       /* Spades */0,
-      /* Dealer */0
+      /* Hand */1
     ],
     /* :: */[
       /* tuple */[
         /* Queen */2,
         /* Spades */0,
-        /* Dealer */0
+        /* Hand */1
       ],
       /* :: */[
         /* tuple */[
           /* Jack */3,
           /* Spades */0,
-          /* Dealer */0
+          /* Hand */1
         ],
         /* :: */[
           /* tuple */[
@@ -39,19 +39,19 @@ var orderedListOfCards = /* :: */[
             /* tuple */[
               /* Nine */5,
               /* Spades */0,
-              /* Dealer */0
+              /* Hand */1
             ],
             /* :: */[
               /* tuple */[
                 /* Eight */6,
                 /* Spades */0,
-                /* Dealer */0
+                /* Hand */1
               ],
               /* :: */[
                 /* tuple */[
                   /* Seven */7,
                   /* Spades */0,
-                  /* Dealer */0
+                  /* Hand */1
                 ],
                 /* :: */[
                   /* tuple */[

@@ -26,28 +26,31 @@ let impureShuffleOfPack = () =>
   // Set to West for testing
   let loc = West;
   let () = allocateShuffledToLocation(loc);
+  // TO DO - the sorting of the hands is NOT a function of the denomination, but NO_TRUMPS works
   let denomination = NO_TRUMPS; /*SUIT(Clubs);*/
-  /* Js.log(compareCardValue((Ace, Hearts),(King, Spades), denomination)); */
   /* mutation */
   /* curried function of 3 params returns func of 2 params */
   let () = Array.sort(compareCardValue(denomination), cardsNorth);
   let () = Array.sort(compareCardValue(denomination), cardsEast);
   let () = Array.sort(compareCardValue(denomination), cardsSouth);
   let () = Array.sort(compareCardValue(denomination), cardsWest);
+  // At this point the four hands are sorted in the correct order S, H, C, D
   // js array values are not helpful!
   //same here - cardToValue expects 2 params, we give it one and it returns
   // a function expecting a single tuple param
-  //Js.log(Array.map(cardToValue(denomination), setOfCardsDealerPlus1));
+  //Js.log(Array.map(cardToValue(denomination), cardsNorth));
 
   let cardsNorthAsString = Array.map(cardToString, cardsNorth);
   let cardsEastAsString = Array.map(cardToString, cardsEast);
   let cardsSouthAsString = Array.map(cardToString, cardsSouth);
   let cardsWestAsString = Array.map(cardToString, cardsWest);
+  // Now the cards are identified by their filename and lifecycle eg [|("AS", Dealer), ....|]
 
   let cardsNorthWithIndex = Array.mapi((k, v) => (k, v), cardsNorthAsString);
   let cardsEastWithIndex = Array.mapi((k, v) => (k, v), cardsEastAsString);
   let cardsSouthWithIndex = Array.mapi((k, v) => (k, v), cardsSouthAsString);
   let cardsWestWithIndex = Array.mapi((k, v) => (k, v), cardsWestAsString);
+  // Add an index to use when rendering the card [| 0, ("AS", Dealer), 1, (), 
 
 
   //Js.log(setOfCardsWithIndexDealerPlus1);
@@ -59,9 +62,9 @@ let impureShuffleOfPack = () =>
     cardsSouth: cardsSouthWithIndex, 
     cardsWest: cardsWestWithIndex, 
     northIsFlipped: false,
-    eastIsFlipped: true,
-    southIsFlipped: true,
-    westIsFlipped: true,
+    eastIsFlipped: false,
+    southIsFlipped: false,
+    westIsFlipped: false,
   };
 };
 

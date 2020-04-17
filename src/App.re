@@ -9,18 +9,27 @@ let make = () => {
   <div id={"main"}>
     // SOUTH CARD
     <div>
+      (
+        ReasonReact.array(
+          Array.map(
+            ((index, (filePath, lc))) =>
               <PlayingCardRotatable 
-                key={string_of_int(0)}
-                cardIndex=0
-                filePath={"./images/" ++ "KS" ++ ".svg"}
+                key={string_of_int(index)}
+                cardIndex=index
+                filePath={"./images/" ++ filePath ++ ".svg"}
                 leftVw=50.0
                 topVh=75.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.southIsFlipped
-                lifecycle=Dealer
+                lifecycle=lc
               />
-    </div>  
+              ,
+              state.cardsSouth
+          )
+        )
+      )
+    </div>
     // SOUTH FLIP 
     <div
       style=(
@@ -36,18 +45,27 @@ let make = () => {
     </div>
     // WEST CARD
     <div>
+      (
+        ReasonReact.array(
+          Array.map(
+            ((index, (filePath, lc))) =>
               <PlayingCardRotatable 
-                key={string_of_int(0)}
-                cardIndex=0
-                filePath={"./images/" ++ "QH" ++ ".svg"}
+                key={string_of_int(index)}
+                cardIndex=index
+                filePath={"./images/" ++ filePath ++ ".svg"}
                 leftVw=25.0
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.westIsFlipped
-                lifecycle=Dealer
+                lifecycle=lc
               />
-    </div>  
+              ,
+              state.cardsWest
+          )
+        )
+      )
+    </div> 
     // WEST FLIP
     <div
       style=(
@@ -99,18 +117,40 @@ let make = () => {
     </div>
     // EAST CARD
     <div>
+      (
+        ReasonReact.array(
+          Array.map(
+            ((index, (filePath, lc))) =>
               <PlayingCardRotatable 
-                key={string_of_int(0)}
-                cardIndex=0
-                filePath={"./images/" ++ "JD" ++ ".svg"}
+                key={string_of_int(index)}
+                cardIndex=index
+                filePath={"./images/" ++ filePath ++ ".svg"}
                 leftVw=75.0
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.eastIsFlipped
-                lifecycle=Dealer
+                lifecycle=lc
               />
-    </div>  
+              ,
+              state.cardsEast
+          )
+        )
+      )
+    </div> 
+    // <div>
+    //           <PlayingCardRotatable 
+    //             key={string_of_int(0)}
+    //             cardIndex=0
+    //             filePath={"./images/" ++ "JD" ++ ".svg"}
+    //             leftVw=75.0
+    //             topVh=50.0
+    //             parentElementWidthPx={[%raw {| window.innerWidth |}]} 
+    //             parentElementHeightPx={[%raw {| window.innerHeight |}]}
+    //             isFlipSide=state.eastIsFlipped
+    //             lifecycle=Dealer
+    //           />
+    // </div>  
     // EAST FLIP 
     <div
       style=(

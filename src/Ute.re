@@ -1,4 +1,4 @@
-/* type definitions */
+/* type definitions **************************************************************/
 type playingCardRank =
   | Ace
   | King
@@ -44,16 +44,17 @@ type gameDenomination =
   | SUIT(playingCardSuit)
 ;
 
-/* value definitions */
+/* value definitions **************************************************************/
+// here we create the initial one pack of cards all at lifecycle = Dealer
 let orderedListOfCards: list(playingCard) = [
-  (Ace,Spades, Dealer),
-  (King, Spades, Dealer),
-  (Queen, Spades, Dealer),
-  (Jack, Spades, Dealer),
+  (Ace,Spades, Hand),
+  (King, Spades, Hand),
+  (Queen, Spades, Hand),
+  (Jack, Spades, Hand),
   (Ten, Spades, Hand),
-  (Nine, Spades, Dealer),
-  (Eight, Spades, Dealer),
-  (Seven, Spades, Dealer),
+  (Nine, Spades, Hand),
+  (Eight, Spades, Hand),
+  (Seven, Spades, Hand),
   (Six, Spades, Dealer),
   (Five, Spades, Dealer),
   (Four, Spades, Dealer),
