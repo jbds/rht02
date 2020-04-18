@@ -30,7 +30,7 @@ let make = (~dispatch: Global.action => unit) => {
       (s2e("Dealer: "))
     </label>
     <select 
-    onChange=((_e) => dispatch(Deal)) //Js.log("Dealer selected"))
+    onChange=((e) => dispatch(DealerChange(ReactEvent.Form.target(e)##value))) //Js.log("Dealer selected"))
     style=(
       ReactDOMRe.Style.make(
         ~color={"#404040"}, 
@@ -40,6 +40,7 @@ let make = (~dispatch: Global.action => unit) => {
       )
     )
     >
+      <option value="?">(s2e("?"))</option>
       <option value="N">(s2e("N"))</option>
       <option value="E">(s2e("E"))</option>
       <option value="S">(s2e("S"))</option>

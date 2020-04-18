@@ -23,7 +23,8 @@ var initialState = {
   northIsFlipped: true,
   eastIsFlipped: true,
   southIsFlipped: true,
-  westIsFlipped: true
+  westIsFlipped: true,
+  dealer: undefined
 };
 
 function reducer(state, action) {
@@ -45,7 +46,8 @@ function reducer(state, action) {
                   northIsFlipped: true,
                   eastIsFlipped: true,
                   southIsFlipped: true,
-                  westIsFlipped: true
+                  westIsFlipped: true,
+                  dealer: state.dealer
                 };
       case /* ShowAllCards */3 :
           return {
@@ -56,7 +58,8 @@ function reducer(state, action) {
                   northIsFlipped: false,
                   eastIsFlipped: false,
                   southIsFlipped: false,
-                  westIsFlipped: false
+                  westIsFlipped: false,
+                  dealer: state.dealer
                 };
       case /* Deal */4 :
           console.log("Deal");
@@ -65,12 +68,76 @@ function reducer(state, action) {
                   cardsEast: state.cardsEast,
                   cardsSouth: state.cardsSouth,
                   cardsWest: state.cardsWest,
-                  northIsFlipped: false,
+                  northIsFlipped: state.northIsFlipped,
                   eastIsFlipped: state.eastIsFlipped,
                   southIsFlipped: state.southIsFlipped,
-                  westIsFlipped: state.westIsFlipped
+                  westIsFlipped: state.westIsFlipped,
+                  dealer: undefined
                 };
       
+    }
+  } else if (action.tag) {
+    switch (action[0]) {
+      case "E" :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: state.northIsFlipped,
+                  eastIsFlipped: state.eastIsFlipped,
+                  southIsFlipped: state.southIsFlipped,
+                  westIsFlipped: state.westIsFlipped,
+                  dealer: /* East */1
+                };
+      case "N" :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: state.northIsFlipped,
+                  eastIsFlipped: state.eastIsFlipped,
+                  southIsFlipped: state.southIsFlipped,
+                  westIsFlipped: state.westIsFlipped,
+                  dealer: /* North */0
+                };
+      case "S" :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: state.northIsFlipped,
+                  eastIsFlipped: state.eastIsFlipped,
+                  southIsFlipped: state.southIsFlipped,
+                  westIsFlipped: state.westIsFlipped,
+                  dealer: /* South */2
+                };
+      case "W" :
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: state.northIsFlipped,
+                  eastIsFlipped: state.eastIsFlipped,
+                  southIsFlipped: state.southIsFlipped,
+                  westIsFlipped: state.westIsFlipped,
+                  dealer: /* West */3
+                };
+      default:
+        return {
+                cardsNorth: state.cardsNorth,
+                cardsEast: state.cardsEast,
+                cardsSouth: state.cardsSouth,
+                cardsWest: state.cardsWest,
+                northIsFlipped: state.northIsFlipped,
+                eastIsFlipped: state.eastIsFlipped,
+                southIsFlipped: state.southIsFlipped,
+                westIsFlipped: state.westIsFlipped,
+                dealer: undefined
+              };
     }
   } else {
     console.log("Flip from some location");
@@ -84,7 +151,8 @@ function reducer(state, action) {
                   northIsFlipped: !state.northIsFlipped,
                   eastIsFlipped: state.eastIsFlipped,
                   southIsFlipped: state.southIsFlipped,
-                  westIsFlipped: state.westIsFlipped
+                  westIsFlipped: state.westIsFlipped,
+                  dealer: state.dealer
                 };
       case /* East */1 :
           return {
@@ -95,7 +163,8 @@ function reducer(state, action) {
                   northIsFlipped: state.northIsFlipped,
                   eastIsFlipped: !state.eastIsFlipped,
                   southIsFlipped: state.southIsFlipped,
-                  westIsFlipped: state.westIsFlipped
+                  westIsFlipped: state.westIsFlipped,
+                  dealer: state.dealer
                 };
       case /* South */2 :
           return {
@@ -106,7 +175,8 @@ function reducer(state, action) {
                   northIsFlipped: state.northIsFlipped,
                   eastIsFlipped: state.eastIsFlipped,
                   southIsFlipped: !state.southIsFlipped,
-                  westIsFlipped: state.westIsFlipped
+                  westIsFlipped: state.westIsFlipped,
+                  dealer: state.dealer
                 };
       case /* West */3 :
           return {
@@ -117,7 +187,8 @@ function reducer(state, action) {
                   northIsFlipped: state.northIsFlipped,
                   eastIsFlipped: state.eastIsFlipped,
                   southIsFlipped: state.southIsFlipped,
-                  westIsFlipped: !state.westIsFlipped
+                  westIsFlipped: !state.westIsFlipped,
+                  dealer: state.dealer
                 };
       
     }

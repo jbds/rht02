@@ -9,6 +9,7 @@ type state = {
   eastIsFlipped: bool,
   southIsFlipped: bool,
   westIsFlipped: bool,
+  dealer: option(location)
 };
 
 let impureShuffleOfPack = () =>
@@ -56,6 +57,7 @@ let impureShuffleOfPack = () =>
   //Js.log(setOfCardsWithIndexDealerPlus1);
 
   // return the four sets of cards as one record aka object
+  // we do not need to know who is dealer when shuffling the pack
   {
     cardsNorth: cardsNorthWithIndex, 
     cardsEast: cardsEastWithIndex, 
@@ -65,6 +67,7 @@ let impureShuffleOfPack = () =>
     eastIsFlipped: false,
     southIsFlipped: false,
     westIsFlipped: false,
+    dealer: None,
   };
 };
 

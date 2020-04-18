@@ -26,7 +26,8 @@ type action =
   | Flip (Ute.location)
   | HideAllCards
   | ShowAllCards
-  | Deal
+  | DealerChange (string)
+  | Deal 
 ;
 
 // utility
@@ -42,6 +43,7 @@ let initialState: Shuffle.state = {
   eastIsFlipped: true,
   southIsFlipped: true,
   westIsFlipped: true,
+  dealer: None,
 };
 
 let reducer = (state, action) =>
@@ -100,12 +102,22 @@ let reducer = (state, action) =>
             westIsFlipped: false,
           }
       }
+      | DealerChange (shortLoc) => {
+        //Js.log("DealerChange to " ++ shortLoc);
+        switch (shortLoc) {
+          | "N" => {...state, dealer: Some(North)}
+          | "E" => {...state, dealer: Some(East)}
+          | "S" => {...state, dealer: Some(South)}
+          | "W" => {...state, dealer: Some(West)}
+          | _ => {...state, dealer: None}
+        }
+      }
       | Deal => {
         Js.log("Deal");
-        
+        // TO DO
         {
           ...state,
-            northIsFlipped: false,
+          dealer: None,
         }
       }
     }
