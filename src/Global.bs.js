@@ -58,6 +58,18 @@ function reducer(state, action) {
                   southIsFlipped: false,
                   westIsFlipped: false
                 };
+      case /* Deal */4 :
+          console.log("Deal");
+          return {
+                  cardsNorth: state.cardsNorth,
+                  cardsEast: state.cardsEast,
+                  cardsSouth: state.cardsSouth,
+                  cardsWest: state.cardsWest,
+                  northIsFlipped: false,
+                  eastIsFlipped: state.eastIsFlipped,
+                  southIsFlipped: state.southIsFlipped,
+                  westIsFlipped: state.westIsFlipped
+                };
       
     }
   } else {

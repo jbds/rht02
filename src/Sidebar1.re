@@ -7,14 +7,57 @@ let make = (~dispatch: Global.action => unit) => {
     onClick=((_e) => dispatch(Shuffle)) //Js.log("Cicked LogToConsole"))//
     style=(
       ReactDOMRe.Style.make(
-        ~color={"Green"}, 
-        ~fontSize={"2vh"},
+        ~color={"#404040"}, 
+        ~fontSize={"2.5vh"},
         ~marginTop={"1vh"},
         ()
       )
     )
     >
       (s2e("Shuffle"))
+    </button>
+    <br/>
+    <label
+    style=(
+      ReactDOMRe.Style.make(
+        ~color={"#404040"}, 
+        ~fontSize={"2.5vh"},
+        ~marginTop={"1vh"},
+        ()
+      )
+    )
+    >
+      (s2e("Dealer: "))
+    </label>
+    <select 
+    onChange=((_e) => dispatch(Deal)) //Js.log("Dealer selected"))
+    style=(
+      ReactDOMRe.Style.make(
+        ~color={"#404040"}, 
+        ~fontSize={"2.5vh"},
+        ~marginTop={"1vh"},
+        ()
+      )
+    )
+    >
+      <option value="N">(s2e("N"))</option>
+      <option value="E">(s2e("E"))</option>
+      <option value="S">(s2e("S"))</option>
+      <option value="W">(s2e("W"))</option>
+    </select>
+    <br/>
+    <button 
+    onClick=((_e) => dispatch(Deal)) //Js.log("Cicked LogToConsole"))//
+    style=(
+      ReactDOMRe.Style.make(
+        ~color={"#404040"}, 
+        ~fontSize={"2.5vh"},
+        ~marginTop={"1vh"},
+        ()
+      )
+    )
+    >
+      (s2e("Deal"))
     </button>
   </div>
 };

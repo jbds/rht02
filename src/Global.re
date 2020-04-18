@@ -26,6 +26,7 @@ type action =
   | Flip (Ute.location)
   | HideAllCards
   | ShowAllCards
+  | Deal
 ;
 
 // utility
@@ -98,6 +99,14 @@ let reducer = (state, action) =>
             southIsFlipped: false,
             westIsFlipped: false,
           }
+      }
+      | Deal => {
+        Js.log("Deal");
+        
+        {
+          ...state,
+            northIsFlipped: false,
+        }
       }
     }
   };

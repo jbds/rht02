@@ -138,19 +138,6 @@ let make = () => {
         )
       )
     </div> 
-    // <div>
-    //           <PlayingCardRotatable 
-    //             key={string_of_int(0)}
-    //             cardIndex=0
-    //             filePath={"./images/" ++ "JD" ++ ".svg"}
-    //             leftVw=75.0
-    //             topVh=50.0
-    //             parentElementWidthPx={[%raw {| window.innerWidth |}]} 
-    //             parentElementHeightPx={[%raw {| window.innerHeight |}]}
-    //             isFlipSide=state.eastIsFlipped
-    //             lifecycle=Dealer
-    //           />
-    // </div>  
     // EAST FLIP 
     <div
       style=(

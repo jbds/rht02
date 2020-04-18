@@ -12,14 +12,46 @@ function Sidebar1(Props) {
   var dispatch = Props.dispatch;
   return React.createElement("div", undefined, React.createElement("button", {
                   style: {
-                    color: "Green",
-                    fontSize: "2vh",
+                    color: "#404040",
+                    fontSize: "2.5vh",
                     marginTop: "1vh"
                   },
                   onClick: (function (_e) {
                       return Curry._1(dispatch, /* Shuffle */1);
                     })
-                }, "Shuffle"));
+                }, "Shuffle"), React.createElement("br", undefined), React.createElement("label", {
+                  style: {
+                    color: "#404040",
+                    fontSize: "2.5vh",
+                    marginTop: "1vh"
+                  }
+                }, "Dealer: "), React.createElement("select", {
+                  style: {
+                    color: "#404040",
+                    fontSize: "2.5vh",
+                    marginTop: "1vh"
+                  },
+                  onChange: (function (_e) {
+                      return Curry._1(dispatch, /* Deal */4);
+                    })
+                }, React.createElement("option", {
+                      value: "N"
+                    }, "N"), React.createElement("option", {
+                      value: "E"
+                    }, "E"), React.createElement("option", {
+                      value: "S"
+                    }, "S"), React.createElement("option", {
+                      value: "W"
+                    }, "W")), React.createElement("br", undefined), React.createElement("button", {
+                  style: {
+                    color: "#404040",
+                    fontSize: "2.5vh",
+                    marginTop: "1vh"
+                  },
+                  onClick: (function (_e) {
+                      return Curry._1(dispatch, /* Deal */4);
+                    })
+                }, "Deal"));
 }
 
 var make = Sidebar1;
