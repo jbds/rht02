@@ -6,7 +6,6 @@ var Ute$ReactHooksTemplate = require("./Ute.bs.js");
 
 function impureShuffleOfPack(param) {
   Ute$ReactHooksTemplate.impureGetRandomSeedUpTo60k(undefined);
-  console.log($$Array.map(Ute$ReactHooksTemplate.cardToString, Ute$ReactHooksTemplate.arrayOfCards));
   Ute$ReactHooksTemplate.allocateShuffledToLocation(/* West */3);
   $$Array.sort((function (param, param$1) {
           return Ute$ReactHooksTemplate.compareCardValue(/* NO_TRUMPS */0, param, param$1);

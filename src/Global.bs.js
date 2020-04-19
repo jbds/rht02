@@ -126,7 +126,79 @@ function dealCardByModulo(k, state) {
             shuffleCount: sc$3 + 1 | 0
           };
   }
-  console.log("should be unreachable");
+  if (state.shuffleCount % 4 === (k + 4 | 0)) {
+    var myArray$4 = state.cardsNorth;
+    var match$4 = Caml_array.caml_array_get(myArray$4, state.shuffleCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$4, state.shuffleCount / 4 | 0, /* tuple */[
+          match$4[0],
+          /* tuple */[
+            match$4[1][0],
+            /* Hand */1
+          ]
+        ]);
+    var sc$4 = state.shuffleCount;
+    return {
+            cardsNorth: myArray$4,
+            cardsEast: state.cardsEast,
+            cardsSouth: state.cardsSouth,
+            cardsWest: state.cardsWest,
+            northIsFlipped: state.northIsFlipped,
+            eastIsFlipped: state.eastIsFlipped,
+            southIsFlipped: state.southIsFlipped,
+            westIsFlipped: state.westIsFlipped,
+            dealer: state.dealer,
+            shuffleCount: sc$4 + 1 | 0
+          };
+  }
+  if (state.shuffleCount % 4 === (k + 5 | 0)) {
+    var myArray$5 = state.cardsEast;
+    var match$5 = Caml_array.caml_array_get(myArray$5, state.shuffleCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$5, state.shuffleCount / 4 | 0, /* tuple */[
+          match$5[0],
+          /* tuple */[
+            match$5[1][0],
+            /* Hand */1
+          ]
+        ]);
+    var sc$5 = state.shuffleCount;
+    return {
+            cardsNorth: state.cardsNorth,
+            cardsEast: myArray$5,
+            cardsSouth: state.cardsSouth,
+            cardsWest: state.cardsWest,
+            northIsFlipped: state.northIsFlipped,
+            eastIsFlipped: state.eastIsFlipped,
+            southIsFlipped: state.southIsFlipped,
+            westIsFlipped: state.westIsFlipped,
+            dealer: state.dealer,
+            shuffleCount: sc$5 + 1 | 0
+          };
+  }
+  if (state.shuffleCount % 4 === (k + 6 | 0)) {
+    var myArray$6 = state.cardsSouth;
+    var match$6 = Caml_array.caml_array_get(myArray$6, state.shuffleCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$6, state.shuffleCount / 4 | 0, /* tuple */[
+          match$6[0],
+          /* tuple */[
+            match$6[1][0],
+            /* Hand */1
+          ]
+        ]);
+    var sc$6 = state.shuffleCount;
+    return {
+            cardsNorth: state.cardsNorth,
+            cardsEast: state.cardsEast,
+            cardsSouth: myArray$6,
+            cardsWest: state.cardsWest,
+            northIsFlipped: state.northIsFlipped,
+            eastIsFlipped: state.eastIsFlipped,
+            southIsFlipped: state.southIsFlipped,
+            westIsFlipped: state.westIsFlipped,
+            dealer: state.dealer,
+            shuffleCount: sc$6 + 1 | 0
+          };
+  }
+  console.log("should be unreachable k=" + String(k));
   return state;
 }
 
@@ -137,9 +209,7 @@ function reducer(state, action) {
           console.log("Action1 trace");
           return state;
       case /* Shuffle */1 :
-          var fourSetsOfCards = Shuffle$ReactHooksTemplate.impureShuffleOfPack(undefined);
-          console.log(fourSetsOfCards);
-          return fourSetsOfCards;
+          return Shuffle$ReactHooksTemplate.impureShuffleOfPack(undefined);
       case /* HideAllCards */2 :
           return {
                   cardsNorth: state.cardsNorth,
@@ -173,16 +243,12 @@ function reducer(state, action) {
           }
           switch (match) {
             case /* North */0 :
-                console.log("Deal to E");
-                return dealCardByModulo(1, state);
+                return dealCardByModulo(-1, state);
             case /* East */1 :
-                console.log("Deal to S");
-                return dealCardByModulo(2, state);
+                return dealCardByModulo(-2, state);
             case /* South */2 :
-                console.log("Deal to W");
-                return dealCardByModulo(3, state);
+                return dealCardByModulo(-3, state);
             case /* West */3 :
-                console.log("Deal to N");
                 return dealCardByModulo(0, state);
             
           }

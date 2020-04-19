@@ -22,7 +22,7 @@ let impureShuffleOfPack = () =>
   // skip if we want repeatable set of cards
   //let () = shuffleArrayInPlace(arrayOfCards, seed);
   /* show shuffled pack of cards, dependent upon seed value above*/
-  Js.log(Array.map(cardToString, arrayOfCards));
+  //Js.log(Array.map(cardToString, arrayOfCards));
   /* we have to know whether to deal the cards to N,E,S or W first */
   /* impure - requires user input  of  dealer N, E, S or W */
   // Set to West for testing

@@ -9,7 +9,7 @@ window.onresize = forceGlobalReRender
 ;
 
 function forceGlobalReRender(param) {
-  console.log("ReRender whole window");
+  console.log("Render whole window");
   return ReactDOMRe.renderToElementWithId(React.createElement(App$ReactHooksTemplate.make, { }), "root");
 }
 

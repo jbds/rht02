@@ -2,7 +2,7 @@
 [%%raw {| window.onresize = forceGlobalReRender |}];
 
 let forceGlobalReRender = () => { 
-  Js.log("ReRender whole window");
+  Js.log("Render whole window");
   ReactDOMRe.renderToElementWithId(<App />, "root");
 };
 
