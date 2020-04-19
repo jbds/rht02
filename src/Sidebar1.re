@@ -2,9 +2,18 @@
 
 let s2e = React.string;
 
+// let doCardDeals = (dispatch) => {
+//   dispatch(Deal);
+// }
+
 [@react.component]
 let make = (~dispatch: Global.action => unit, ~state: Shuffle.state) => {
   let isNotShuffled = Array.length(state.cardsNorth) == 0 ? true : false;
+  let do52CardDeals = (dispatch: Global.action => unit) => {
+    for (x in 0 to 51) {
+      let _ = Js.Global.setTimeout(() => dispatch(Deal), 60 * x);
+    }
+  };
   <div>
     <button 
     onClick=((_e) => dispatch(Shuffle)) //Js.log("Cicked LogToConsole"))//
@@ -52,7 +61,7 @@ let make = (~dispatch: Global.action => unit, ~state: Shuffle.state) => {
     </select>
     <br/>
     <button 
-    onClick=((_e) => dispatch(Deal)) //Js.log("Cicked LogToConsole"))//
+    onClick=((_e) => {do52CardDeals(dispatch)}) //Js.log("Cicked LogToConsole"))//
     style=(
       ReactDOMRe.Style.make(
         ~color={state.dealer == None ? "#C0C0C0" : "#404040"}, 

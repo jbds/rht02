@@ -4,6 +4,7 @@
 var Block = require("bs-platform/lib/js/block.js");
 var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
+var Caml_int32 = require("bs-platform/lib/js/caml_int32.js");
 
 function s2e(prim) {
   return prim;
@@ -56,7 +57,12 @@ function Sidebar1(Props) {
                   },
                   disabled: state.dealer === undefined,
                   onClick: (function (_e) {
-                      return Curry._1(dispatch, /* Deal */4);
+                      for(var x = 0; x <= 51; ++x){
+                        setTimeout((function (param) {
+                                return Curry._1(dispatch, /* Deal */4);
+                              }), Caml_int32.imul(60, x));
+                      }
+                      
                     })
                 }, "Deal"), React.createElement("br", undefined));
 }

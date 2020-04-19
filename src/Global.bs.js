@@ -40,7 +40,8 @@ function dealCardByModulo(k, state) {
             /* Hand */1
           ]
         ]);
-    var sc = state.cardsDealedCount;
+    var sc = state.cardsDealedCount === 51 ? -1 : state.cardsDealedCount;
+    console.log("cardsNorth sc=" + String(sc));
     return {
             cardsNorth: myArray,
             cardsEast: state.cardsEast,

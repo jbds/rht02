@@ -55,7 +55,8 @@ let dealCardByModulo = (k: int, state: Shuffle.state) => {
     let (i,(s, _)) = myArray[state.cardsDealedCount/4];
     myArray[state.cardsDealedCount/4] = (i,(s, Hand));
     // at this point myArray should be the updated version of cardsNorth
-    let sc = state.cardsDealedCount;
+    let sc = state.cardsDealedCount == 51 ? -1 : state.cardsDealedCount;
+    Js.log("cardsNorth sc=" ++ string_of_int(sc));
     {...state, cardsNorth: myArray, cardsDealedCount: sc + 1};
   } else if ((state.cardsDealedCount mod 4) == (k + 1)) {
     let myArray = state.cardsEast;
