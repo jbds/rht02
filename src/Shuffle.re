@@ -10,7 +10,7 @@ type state = {
   southIsFlipped: bool,
   westIsFlipped: bool,
   dealer: option(location),
-  shuffleCount: int,
+  cardsDealedCount: int,
 };
 
 let impureShuffleOfPack = () =>
@@ -69,7 +69,7 @@ let impureShuffleOfPack = () =>
     southIsFlipped: false,
     westIsFlipped: false,
     dealer: None,
-    shuffleCount: 0
+    cardsDealedCount: 0
   };
 };
 

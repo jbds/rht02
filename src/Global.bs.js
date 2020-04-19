@@ -26,21 +26,21 @@ var initialState = {
   southIsFlipped: true,
   westIsFlipped: true,
   dealer: undefined,
-  shuffleCount: 0
+  cardsDealedCount: 0
 };
 
 function dealCardByModulo(k, state) {
-  if (state.shuffleCount % 4 === k) {
+  if (state.cardsDealedCount % 4 === k) {
     var myArray = state.cardsNorth;
-    var match = Caml_array.caml_array_get(myArray, state.shuffleCount / 4 | 0);
-    Caml_array.caml_array_set(myArray, state.shuffleCount / 4 | 0, /* tuple */[
+    var match = Caml_array.caml_array_get(myArray, state.cardsDealedCount / 4 | 0);
+    Caml_array.caml_array_set(myArray, state.cardsDealedCount / 4 | 0, /* tuple */[
           match[0],
           /* tuple */[
             match[1][0],
             /* Hand */1
           ]
         ]);
-    var sc = state.shuffleCount;
+    var sc = state.cardsDealedCount;
     return {
             cardsNorth: myArray,
             cardsEast: state.cardsEast,
@@ -51,20 +51,20 @@ function dealCardByModulo(k, state) {
             southIsFlipped: state.southIsFlipped,
             westIsFlipped: state.westIsFlipped,
             dealer: state.dealer,
-            shuffleCount: sc + 1 | 0
+            cardsDealedCount: sc + 1 | 0
           };
   }
-  if (state.shuffleCount % 4 === (k + 1 | 0)) {
+  if (state.cardsDealedCount % 4 === (k + 1 | 0)) {
     var myArray$1 = state.cardsEast;
-    var match$1 = Caml_array.caml_array_get(myArray$1, state.shuffleCount / 4 | 0);
-    Caml_array.caml_array_set(myArray$1, state.shuffleCount / 4 | 0, /* tuple */[
+    var match$1 = Caml_array.caml_array_get(myArray$1, state.cardsDealedCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$1, state.cardsDealedCount / 4 | 0, /* tuple */[
           match$1[0],
           /* tuple */[
             match$1[1][0],
             /* Hand */1
           ]
         ]);
-    var sc$1 = state.shuffleCount;
+    var sc$1 = state.cardsDealedCount;
     return {
             cardsNorth: state.cardsNorth,
             cardsEast: myArray$1,
@@ -75,20 +75,20 @@ function dealCardByModulo(k, state) {
             southIsFlipped: state.southIsFlipped,
             westIsFlipped: state.westIsFlipped,
             dealer: state.dealer,
-            shuffleCount: sc$1 + 1 | 0
+            cardsDealedCount: sc$1 + 1 | 0
           };
   }
-  if (state.shuffleCount % 4 === (k + 2 | 0)) {
+  if (state.cardsDealedCount % 4 === (k + 2 | 0)) {
     var myArray$2 = state.cardsSouth;
-    var match$2 = Caml_array.caml_array_get(myArray$2, state.shuffleCount / 4 | 0);
-    Caml_array.caml_array_set(myArray$2, state.shuffleCount / 4 | 0, /* tuple */[
+    var match$2 = Caml_array.caml_array_get(myArray$2, state.cardsDealedCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$2, state.cardsDealedCount / 4 | 0, /* tuple */[
           match$2[0],
           /* tuple */[
             match$2[1][0],
             /* Hand */1
           ]
         ]);
-    var sc$2 = state.shuffleCount;
+    var sc$2 = state.cardsDealedCount;
     return {
             cardsNorth: state.cardsNorth,
             cardsEast: state.cardsEast,
@@ -99,20 +99,20 @@ function dealCardByModulo(k, state) {
             southIsFlipped: state.southIsFlipped,
             westIsFlipped: state.westIsFlipped,
             dealer: state.dealer,
-            shuffleCount: sc$2 + 1 | 0
+            cardsDealedCount: sc$2 + 1 | 0
           };
   }
-  if (state.shuffleCount % 4 === (k + 3 | 0)) {
+  if (state.cardsDealedCount % 4 === (k + 3 | 0)) {
     var myArray$3 = state.cardsWest;
-    var match$3 = Caml_array.caml_array_get(myArray$3, state.shuffleCount / 4 | 0);
-    Caml_array.caml_array_set(myArray$3, state.shuffleCount / 4 | 0, /* tuple */[
+    var match$3 = Caml_array.caml_array_get(myArray$3, state.cardsDealedCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$3, state.cardsDealedCount / 4 | 0, /* tuple */[
           match$3[0],
           /* tuple */[
             match$3[1][0],
             /* Hand */1
           ]
         ]);
-    var sc$3 = state.shuffleCount;
+    var sc$3 = state.cardsDealedCount;
     return {
             cardsNorth: state.cardsNorth,
             cardsEast: state.cardsEast,
@@ -123,20 +123,20 @@ function dealCardByModulo(k, state) {
             southIsFlipped: state.southIsFlipped,
             westIsFlipped: state.westIsFlipped,
             dealer: state.dealer,
-            shuffleCount: sc$3 + 1 | 0
+            cardsDealedCount: sc$3 + 1 | 0
           };
   }
-  if (state.shuffleCount % 4 === (k + 4 | 0)) {
+  if (state.cardsDealedCount % 4 === (k + 4 | 0)) {
     var myArray$4 = state.cardsNorth;
-    var match$4 = Caml_array.caml_array_get(myArray$4, state.shuffleCount / 4 | 0);
-    Caml_array.caml_array_set(myArray$4, state.shuffleCount / 4 | 0, /* tuple */[
+    var match$4 = Caml_array.caml_array_get(myArray$4, state.cardsDealedCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$4, state.cardsDealedCount / 4 | 0, /* tuple */[
           match$4[0],
           /* tuple */[
             match$4[1][0],
             /* Hand */1
           ]
         ]);
-    var sc$4 = state.shuffleCount;
+    var sc$4 = state.cardsDealedCount;
     return {
             cardsNorth: myArray$4,
             cardsEast: state.cardsEast,
@@ -147,20 +147,20 @@ function dealCardByModulo(k, state) {
             southIsFlipped: state.southIsFlipped,
             westIsFlipped: state.westIsFlipped,
             dealer: state.dealer,
-            shuffleCount: sc$4 + 1 | 0
+            cardsDealedCount: sc$4 + 1 | 0
           };
   }
-  if (state.shuffleCount % 4 === (k + 5 | 0)) {
+  if (state.cardsDealedCount % 4 === (k + 5 | 0)) {
     var myArray$5 = state.cardsEast;
-    var match$5 = Caml_array.caml_array_get(myArray$5, state.shuffleCount / 4 | 0);
-    Caml_array.caml_array_set(myArray$5, state.shuffleCount / 4 | 0, /* tuple */[
+    var match$5 = Caml_array.caml_array_get(myArray$5, state.cardsDealedCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$5, state.cardsDealedCount / 4 | 0, /* tuple */[
           match$5[0],
           /* tuple */[
             match$5[1][0],
             /* Hand */1
           ]
         ]);
-    var sc$5 = state.shuffleCount;
+    var sc$5 = state.cardsDealedCount;
     return {
             cardsNorth: state.cardsNorth,
             cardsEast: myArray$5,
@@ -171,20 +171,20 @@ function dealCardByModulo(k, state) {
             southIsFlipped: state.southIsFlipped,
             westIsFlipped: state.westIsFlipped,
             dealer: state.dealer,
-            shuffleCount: sc$5 + 1 | 0
+            cardsDealedCount: sc$5 + 1 | 0
           };
   }
-  if (state.shuffleCount % 4 === (k + 6 | 0)) {
+  if (state.cardsDealedCount % 4 === (k + 6 | 0)) {
     var myArray$6 = state.cardsSouth;
-    var match$6 = Caml_array.caml_array_get(myArray$6, state.shuffleCount / 4 | 0);
-    Caml_array.caml_array_set(myArray$6, state.shuffleCount / 4 | 0, /* tuple */[
+    var match$6 = Caml_array.caml_array_get(myArray$6, state.cardsDealedCount / 4 | 0);
+    Caml_array.caml_array_set(myArray$6, state.cardsDealedCount / 4 | 0, /* tuple */[
           match$6[0],
           /* tuple */[
             match$6[1][0],
             /* Hand */1
           ]
         ]);
-    var sc$6 = state.shuffleCount;
+    var sc$6 = state.cardsDealedCount;
     return {
             cardsNorth: state.cardsNorth,
             cardsEast: state.cardsEast,
@@ -195,7 +195,7 @@ function dealCardByModulo(k, state) {
             southIsFlipped: state.southIsFlipped,
             westIsFlipped: state.westIsFlipped,
             dealer: state.dealer,
-            shuffleCount: sc$6 + 1 | 0
+            cardsDealedCount: sc$6 + 1 | 0
           };
   }
   console.log("should be unreachable k=" + String(k));
@@ -221,7 +221,7 @@ function reducer(state, action) {
                   southIsFlipped: true,
                   westIsFlipped: true,
                   dealer: state.dealer,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       case /* ShowAllCards */3 :
           return {
@@ -234,7 +234,7 @@ function reducer(state, action) {
                   southIsFlipped: false,
                   westIsFlipped: false,
                   dealer: state.dealer,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       case /* Deal */4 :
           var match = state.dealer;
@@ -267,7 +267,7 @@ function reducer(state, action) {
                   southIsFlipped: state.southIsFlipped,
                   westIsFlipped: state.westIsFlipped,
                   dealer: /* East */1,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       case "N" :
           return {
@@ -280,7 +280,7 @@ function reducer(state, action) {
                   southIsFlipped: state.southIsFlipped,
                   westIsFlipped: state.westIsFlipped,
                   dealer: /* North */0,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       case "S" :
           return {
@@ -293,7 +293,7 @@ function reducer(state, action) {
                   southIsFlipped: state.southIsFlipped,
                   westIsFlipped: state.westIsFlipped,
                   dealer: /* South */2,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       case "W" :
           return {
@@ -306,7 +306,7 @@ function reducer(state, action) {
                   southIsFlipped: state.southIsFlipped,
                   westIsFlipped: state.westIsFlipped,
                   dealer: /* West */3,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       default:
         return {
@@ -319,7 +319,7 @@ function reducer(state, action) {
                 southIsFlipped: state.southIsFlipped,
                 westIsFlipped: state.westIsFlipped,
                 dealer: undefined,
-                shuffleCount: state.shuffleCount
+                cardsDealedCount: state.cardsDealedCount
               };
     }
   } else {
@@ -336,7 +336,7 @@ function reducer(state, action) {
                   southIsFlipped: state.southIsFlipped,
                   westIsFlipped: state.westIsFlipped,
                   dealer: state.dealer,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       case /* East */1 :
           return {
@@ -349,7 +349,7 @@ function reducer(state, action) {
                   southIsFlipped: state.southIsFlipped,
                   westIsFlipped: state.westIsFlipped,
                   dealer: state.dealer,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       case /* South */2 :
           return {
@@ -362,7 +362,7 @@ function reducer(state, action) {
                   southIsFlipped: !state.southIsFlipped,
                   westIsFlipped: state.westIsFlipped,
                   dealer: state.dealer,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       case /* West */3 :
           return {
@@ -375,7 +375,7 @@ function reducer(state, action) {
                   southIsFlipped: state.southIsFlipped,
                   westIsFlipped: !state.westIsFlipped,
                   dealer: state.dealer,
-                  shuffleCount: state.shuffleCount
+                  cardsDealedCount: state.cardsDealedCount
                 };
       
     }

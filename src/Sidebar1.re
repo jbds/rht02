@@ -4,6 +4,7 @@ let s2e = React.string;
 
 [@react.component]
 let make = (~dispatch: Global.action => unit, ~state: Shuffle.state) => {
+  let isNotShuffled = Array.length(state.cardsNorth) == 0 ? true : false;
   <div>
     <button 
     onClick=((_e) => dispatch(Shuffle)) //Js.log("Cicked LogToConsole"))//
@@ -22,7 +23,7 @@ let make = (~dispatch: Global.action => unit, ~state: Shuffle.state) => {
     <label
     style=(
       ReactDOMRe.Style.make(
-        ~color={"#404040"}, 
+        ~color={isNotShuffled ? "#C0C0C0" : "#404040"}, 
         ~fontSize={"2.5vh"},
         ~marginTop={"1vh"},
         ()
@@ -35,12 +36,13 @@ let make = (~dispatch: Global.action => unit, ~state: Shuffle.state) => {
     onChange=((e) => dispatch(DealerChange(ReactEvent.Form.target(e)##value))) //Js.log("Dealer selected"))
     style=(
       ReactDOMRe.Style.make(
-        ~color={"#404040"}, 
+        ~color={isNotShuffled ? "#C0C0C0" : "#404040"}, 
         ~fontSize={"2.5vh"},
         ~marginTop={"1vh"},
         ()
       )
     )
+    disabled=isNotShuffled
     >
       <option value="?">(s2e("?"))</option>
       <option value="N">(s2e("N"))</option>

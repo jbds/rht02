@@ -44,55 +44,55 @@ let initialState: Shuffle.state = {
   southIsFlipped: true,
   westIsFlipped: true,
   dealer: None,
-  shuffleCount: 0,
+  cardsDealedCount: 0,
 };
 
 // could probably be refactored to something simpler, but works ok
 let dealCardByModulo = (k: int, state: Shuffle.state) => {
-  if ((state.shuffleCount mod 4) == k ) {
+  if ((state.cardsDealedCount mod 4) == k ) {
     let myArray = state.cardsNorth;
     // destructure and then force Hand
-    let (i,(s, _)) = myArray[state.shuffleCount/4];
-    myArray[state.shuffleCount/4] = (i,(s, Hand));
+    let (i,(s, _)) = myArray[state.cardsDealedCount/4];
+    myArray[state.cardsDealedCount/4] = (i,(s, Hand));
     // at this point myArray should be the updated version of cardsNorth
-    let sc = state.shuffleCount;
-    {...state, cardsNorth: myArray, shuffleCount: sc + 1};
-  } else if ((state.shuffleCount mod 4) == (k + 1)) {
+    let sc = state.cardsDealedCount;
+    {...state, cardsNorth: myArray, cardsDealedCount: sc + 1};
+  } else if ((state.cardsDealedCount mod 4) == (k + 1)) {
     let myArray = state.cardsEast;
-    let (i,(s, _)) = myArray[state.shuffleCount/4];
-    myArray[state.shuffleCount/4] = (i,(s, Hand));
-    let sc = state.shuffleCount;
-    {...state, cardsEast: myArray, shuffleCount: sc + 1};
-  } else if ((state.shuffleCount mod 4) == (k + 2)) {
+    let (i,(s, _)) = myArray[state.cardsDealedCount/4];
+    myArray[state.cardsDealedCount/4] = (i,(s, Hand));
+    let sc = state.cardsDealedCount;
+    {...state, cardsEast: myArray, cardsDealedCount: sc + 1};
+  } else if ((state.cardsDealedCount mod 4) == (k + 2)) {
     let myArray = state.cardsSouth;
-    let (i,(s, _)) = myArray[state.shuffleCount/4];
-    myArray[state.shuffleCount/4] = (i,(s, Hand));
-    let sc = state.shuffleCount;
-    {...state, cardsSouth: myArray, shuffleCount: sc + 1};
-  } else if ((state.shuffleCount mod 4) == (k + 3)) {
+    let (i,(s, _)) = myArray[state.cardsDealedCount/4];
+    myArray[state.cardsDealedCount/4] = (i,(s, Hand));
+    let sc = state.cardsDealedCount;
+    {...state, cardsSouth: myArray, cardsDealedCount: sc + 1};
+  } else if ((state.cardsDealedCount mod 4) == (k + 3)) {
     let myArray = state.cardsWest;
-    let (i,(s, _)) = myArray[state.shuffleCount/4];
-    myArray[state.shuffleCount/4] = (i,(s, Hand));
-    let sc = state.shuffleCount;
-    {...state, cardsWest: myArray, shuffleCount: sc + 1};
-  } else if ((state.shuffleCount mod 4) == (k + 4)) {
+    let (i,(s, _)) = myArray[state.cardsDealedCount/4];
+    myArray[state.cardsDealedCount/4] = (i,(s, Hand));
+    let sc = state.cardsDealedCount;
+    {...state, cardsWest: myArray, cardsDealedCount: sc + 1};
+  } else if ((state.cardsDealedCount mod 4) == (k + 4)) {
     let myArray = state.cardsNorth;
-    let (i,(s, _)) = myArray[state.shuffleCount/4];
-    myArray[state.shuffleCount/4] = (i,(s, Hand));
-    let sc = state.shuffleCount;
-    {...state, cardsNorth: myArray, shuffleCount: sc + 1};
-  } else if ((state.shuffleCount mod 4) == (k + 5)) {
+    let (i,(s, _)) = myArray[state.cardsDealedCount/4];
+    myArray[state.cardsDealedCount/4] = (i,(s, Hand));
+    let sc = state.cardsDealedCount;
+    {...state, cardsNorth: myArray, cardsDealedCount: sc + 1};
+  } else if ((state.cardsDealedCount mod 4) == (k + 5)) {
     let myArray = state.cardsEast;
-    let (i,(s, _)) = myArray[state.shuffleCount/4];
-    myArray[state.shuffleCount/4] = (i,(s, Hand));
-    let sc = state.shuffleCount;
-    {...state, cardsEast: myArray, shuffleCount: sc + 1};
-  } else if ((state.shuffleCount mod 4) == (k + 6)) {
+    let (i,(s, _)) = myArray[state.cardsDealedCount/4];
+    myArray[state.cardsDealedCount/4] = (i,(s, Hand));
+    let sc = state.cardsDealedCount;
+    {...state, cardsEast: myArray, cardsDealedCount: sc + 1};
+  } else if ((state.cardsDealedCount mod 4) == (k + 6)) {
     let myArray = state.cardsSouth;
-    let (i,(s, _)) = myArray[state.shuffleCount/4];
-    myArray[state.shuffleCount/4] = (i,(s, Hand));
-    let sc = state.shuffleCount;
-    {...state, cardsSouth: myArray, shuffleCount: sc + 1};
+    let (i,(s, _)) = myArray[state.cardsDealedCount/4];
+    myArray[state.cardsDealedCount/4] = (i,(s, Hand));
+    let sc = state.cardsDealedCount;
+    {...state, cardsSouth: myArray, cardsDealedCount: sc + 1};
   } else {
     Js.log("should be unreachable k=" ++ string_of_int(k));
     {state}

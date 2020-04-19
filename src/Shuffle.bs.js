@@ -57,7 +57,7 @@ function impureShuffleOfPack(param) {
           southIsFlipped: false,
           westIsFlipped: false,
           dealer: undefined,
-          shuffleCount: 0
+          cardsDealedCount: 0
         };
 }
 
