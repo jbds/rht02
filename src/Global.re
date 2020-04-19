@@ -44,6 +44,41 @@ let initialState: Shuffle.state = {
   southIsFlipped: true,
   westIsFlipped: true,
   dealer: None,
+  shuffleCount: 0,
+};
+
+
+let dealCardByModulo = (k: int, state: Shuffle.state) => {
+  if (state.shuffleCount mod 4 == k) {
+    let myArray = state.cardsNorth;
+    // destructure and then force Hand
+    let (i,(s, _)) = myArray[state.shuffleCount/4];
+    myArray[state.shuffleCount/4] = (i,(s, Hand));
+    // at this point myArray should be the updated version of cardsNorth
+    let sc = state.shuffleCount;
+    {...state, cardsNorth: myArray, shuffleCount: sc + 1};
+  } else if (state.shuffleCount mod 4 == k + 1) {
+    let myArray = state.cardsEast;
+    let (i,(s, _)) = myArray[state.shuffleCount/4];
+    myArray[state.shuffleCount/4] = (i,(s, Hand));
+    let sc = state.shuffleCount;
+    {...state, cardsEast: myArray, shuffleCount: sc + 1};
+  } else if (state.shuffleCount mod 4 == k + 2) {
+    let myArray = state.cardsSouth;
+    let (i,(s, _)) = myArray[state.shuffleCount/4];
+    myArray[state.shuffleCount/4] = (i,(s, Hand));
+    let sc = state.shuffleCount;
+    {...state, cardsSouth: myArray, shuffleCount: sc + 1};
+  } else if (state.shuffleCount mod 4 == k + 3) {
+    let myArray = state.cardsWest;
+    let (i,(s, _)) = myArray[state.shuffleCount/4];
+    myArray[state.shuffleCount/4] = (i,(s, Hand));
+    let sc = state.shuffleCount;
+    {...state, cardsWest: myArray, shuffleCount: sc + 1};
+  } else {
+    Js.log("should be unreachable");
+    {state}
+  }
 };
 
 let reducer = (state, action) =>
@@ -113,11 +148,12 @@ let reducer = (state, action) =>
         }
       }
       | Deal => {
-        Js.log("Deal");
-        // TO DO
-        {
-          ...state,
-          dealer: None,
+        switch (state.dealer) {
+          | None => state
+          | Some(North) => {Js.log("Deal to E"); dealCardByModulo(1, state)}
+          | Some(East) => {Js.log("Deal to S"); dealCardByModulo(2, state)}
+          | Some(South) => {Js.log("Deal to W"); dealCardByModulo(3, state)}
+          | Some(West) => {Js.log("Deal to N"); dealCardByModulo(0, state)}
         }
       }
     }

@@ -47,14 +47,14 @@ type gameDenomination =
 /* value definitions **************************************************************/
 // here we create the initial one pack of cards all at lifecycle = Dealer
 let orderedListOfCards: list(playingCard) = [
-  (Ace,Spades, Hand),
-  (King, Spades, Hand),
-  (Queen, Spades, Hand),
-  (Jack, Spades, Hand),
-  (Ten, Spades, Hand),
-  (Nine, Spades, Hand),
-  (Eight, Spades, Hand),
-  (Seven, Spades, Hand),
+  (Ace,Spades, Dealer),
+  (King, Spades, Dealer),
+  (Queen, Spades, Dealer),
+  (Jack, Spades, Dealer),
+  (Ten, Spades, Dealer),
+  (Nine, Spades, Dealer),
+  (Eight, Spades, Dealer),
+  (Seven, Spades, Dealer),
   (Six, Spades, Dealer),
   (Five, Spades, Dealer),
   (Four, Spades, Dealer),

@@ -153,7 +153,7 @@ let make = () => {
     </div>
     // SIDEBARS
     <div id="sidebar1">
-      <Sidebar1 dispatch/>
+      <Sidebar1 dispatch state/>
     </div>
     <div id="sidebar2">
       //(s2e("Sidebar2"))

@@ -57,7 +57,8 @@ function impureShuffleOfPack(param) {
           eastIsFlipped: false,
           southIsFlipped: false,
           westIsFlipped: false,
-          dealer: undefined
+          dealer: undefined,
+          shuffleCount: 0
         };
 }
 

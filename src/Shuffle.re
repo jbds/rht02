@@ -9,7 +9,8 @@ type state = {
   eastIsFlipped: bool,
   southIsFlipped: bool,
   westIsFlipped: bool,
-  dealer: option(location)
+  dealer: option(location),
+  shuffleCount: int,
 };
 
 let impureShuffleOfPack = () =>
@@ -68,6 +69,7 @@ let impureShuffleOfPack = () =>
     southIsFlipped: false,
     westIsFlipped: false,
     dealer: None,
+    shuffleCount: 0
   };
 };
 

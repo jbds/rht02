@@ -1,7 +1,9 @@
+
+
 let s2e = React.string;
 
 [@react.component]
-let make = (~dispatch: Global.action => unit) => {
+let make = (~dispatch: Global.action => unit, ~state: Shuffle.state) => {
   <div>
     <button 
     onClick=((_e) => dispatch(Shuffle)) //Js.log("Cicked LogToConsole"))//
@@ -51,14 +53,16 @@ let make = (~dispatch: Global.action => unit) => {
     onClick=((_e) => dispatch(Deal)) //Js.log("Cicked LogToConsole"))//
     style=(
       ReactDOMRe.Style.make(
-        ~color={"#404040"}, 
+        ~color={state.dealer == None ? "#C0C0C0" : "#404040"}, 
         ~fontSize={"2.5vh"},
         ~marginTop={"1vh"},
         ()
       )
     )
+    disabled={state.dealer == None ? true : false}
     >
       (s2e("Deal"))
     </button>
+    <br/>
   </div>
 };

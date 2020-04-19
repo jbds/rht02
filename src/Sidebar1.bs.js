@@ -11,6 +11,7 @@ function s2e(prim) {
 
 function Sidebar1(Props) {
   var dispatch = Props.dispatch;
+  var state = Props.state;
   return React.createElement("div", undefined, React.createElement("button", {
                   style: {
                     color: "#404040",
@@ -47,14 +48,15 @@ function Sidebar1(Props) {
                       value: "W"
                     }, "W")), React.createElement("br", undefined), React.createElement("button", {
                   style: {
-                    color: "#404040",
+                    color: state.dealer === undefined ? "#C0C0C0" : "#404040",
                     fontSize: "2.5vh",
                     marginTop: "1vh"
                   },
+                  disabled: state.dealer === undefined,
                   onClick: (function (_e) {
                       return Curry._1(dispatch, /* Deal */4);
                     })
-                }, "Deal"));
+                }, "Deal"), React.createElement("br", undefined));
 }
 
 var make = Sidebar1;

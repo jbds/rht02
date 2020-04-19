@@ -110,7 +110,8 @@ function App(Props) {
                     })), React.createElement("div", {
                   id: "sidebar1"
                 }, React.createElement(Sidebar1$ReactHooksTemplate.make, {
-                      dispatch: dispatch
+                      dispatch: dispatch,
+                      state: state
                     })), React.createElement("div", {
                   id: "sidebar2"
                 }), React.createElement("div", {
