@@ -17,8 +17,8 @@ let make = () => {
                 key={string_of_int(index)}
                 cardIndex=index
                 filePath={"./images/" ++ filePath ++ ".svg"}
-                leftVw=50.0
-                topVh=75.0
+                leftVw={50.0 +. 3.75}
+                topVh={75.0 +. 8.00}
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.southIsFlipped
@@ -30,13 +30,13 @@ let make = () => {
         )
       )
     </div>
-    // SOUTH FLIP 
+    // SOUTH FLIP - flip button inc margin starts at bottom of card
     <div
       style=(
         ReactDOMRe.Style.make(
           ~position={"absolute"}, 
-          ~top={"90%"}, 
           ~left={"50%"}, 
+          ~top={"95.5%"}, 
           ()
         )
       )
@@ -53,7 +53,7 @@ let make = () => {
                 key={string_of_int(index)}
                 cardIndex=index
                 filePath={"./images/" ++ filePath ++ ".svg"}
-                leftVw=25.0
+                leftVw={25.0 +. 3.75 -.8.00}
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
@@ -71,8 +71,8 @@ let make = () => {
       style=(
         ReactDOMRe.Style.make(
           ~position={"absolute"}, 
-          ~top={"65%"}, 
-          ~left={"25%"}, 
+          ~left={"17%"}, 
+          ~top={"62.5%"}, 
           ()
         )
       )
@@ -89,8 +89,8 @@ let make = () => {
                 key={string_of_int(index)}
                 cardIndex=index
                 filePath={"./images/" ++ filePath ++ ".svg"}
-                leftVw=50.0
-                topVh=25.0
+                leftVw={50.0 +. 3.75}
+                topVh={25.0 -. 9.00}
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
                 isFlipSide=state.northIsFlipped
@@ -107,8 +107,8 @@ let make = () => {
       style=(
         ReactDOMRe.Style.make(
           ~position={"absolute"}, 
-          ~top={"40%"}, 
           ~left={"50%"}, 
+          ~top={"28.5%"}, 
           ()
         )
       )
@@ -125,7 +125,7 @@ let make = () => {
                 key={string_of_int(index)}
                 cardIndex=index
                 filePath={"./images/" ++ filePath ++ ".svg"}
-                leftVw=75.0
+                leftVw={75.0 +. 3.75 +. 8.00}
                 topVh=50.0
                 parentElementWidthPx={[%raw {| window.innerWidth |}]} 
                 parentElementHeightPx={[%raw {| window.innerHeight |}]}
@@ -143,8 +143,8 @@ let make = () => {
       style=(
         ReactDOMRe.Style.make(
           ~position={"absolute"}, 
-          ~top={"65%"}, 
-          ~left={"75%"}, 
+          ~left={"83%"}, 
+          ~top={"62.5%"}, 
           ()
         )
       )

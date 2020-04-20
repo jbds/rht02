@@ -21,7 +21,7 @@ function PlayingCardRotatable(Props) {
   var cardHalfHeightPx = parentElementHeightPx * 25.0 / (100.0 * 2.0);
   var topAdj = topVh - cardHalfHeightPx * 100.0 / parentElementHeightPx;
   var transformA = "translate(" + (cardHalfWidthPx.toString() + ("px, " + ((-cardHalfWidthPx * 4.25).toString() + "px)")));
-  var transformB = "rotate(" + ((3.75 * (cardIndex - 0.0)).toString() + "deg)");
+  var transformB = "rotate(" + ((3.625 * (cardIndex - 8.0)).toString() + "deg)");
   var transformC = "translate(" + ((-cardHalfWidthPx).toString() + ("px, " + ((cardHalfWidthPx * 4.25).toString() + "px)")));
   var adjustedFilePath = isFlipSide ? "./images/1B.svg" : filePath;
   var i = React.createElement("img", {
@@ -47,9 +47,9 @@ var cardHeightOverCardWidth = 1.56;
 
 var rotationOriginYOffsetMultiplier = 4.25;
 
-var angleDeg = 3.75;
+var angleDeg = 3.625;
 
-var cardIndexOffset = 0.0;
+var cardIndexOffset = 8.0;
 
 var baizeAsFractionOfViewportWidth = 0.8;
 

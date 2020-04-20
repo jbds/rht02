@@ -4,9 +4,10 @@ let cardHeightVh = 25.0;
 let cardHeightOverCardWidth = 1.56;
 // where is this from?
 let rotationOriginYOffsetMultiplier = 4.25;
-let angleDeg = 3.75;
-// use 6.0 for centre card upright, 7.5 looks better, but offsets catds to left
-let cardIndexOffset = 0.0;
+let angleDeg = 3.625;
+// use 6.0 for centre card upright, 8.o looks better, 
+// but offsets cards to left approx 5% of window width
+let cardIndexOffset =8.0;
 let baizeAsFractionOfViewportWidth = 0.8;
 let f2s = Js.Float.toString;
 

@@ -21,8 +21,8 @@ function App(Props) {
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                                     cardIndex: index,
                                     filePath: "./images/" + (match[0] + ".svg"),
-                                    leftVw: 50.0,
-                                    topVh: 75.0,
+                                    leftVw: 50.0 + 3.75,
+                                    topVh: 75.0 + 8.00,
                                     parentElementWidthPx: window.innerWidth,
                                     parentElementHeightPx: window.innerHeight,
                                     isFlipSide: state.southIsFlipped,
@@ -33,7 +33,7 @@ function App(Props) {
                   style: {
                     left: "50%",
                     position: "absolute",
-                    top: "90%"
+                    top: "95.5%"
                   }
                 }, React.createElement(FlipButton$ReactHooksTemplate.make, {
                       dispatch: dispatch,
@@ -44,7 +44,7 @@ function App(Props) {
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                                     cardIndex: index,
                                     filePath: "./images/" + (match[0] + ".svg"),
-                                    leftVw: 25.0,
+                                    leftVw: 25.0 + 3.75 - 8.00,
                                     topVh: 50.0,
                                     parentElementWidthPx: window.innerWidth,
                                     parentElementHeightPx: window.innerHeight,
@@ -54,9 +54,9 @@ function App(Props) {
                                   });
                       }), state.cardsWest)), React.createElement("div", {
                   style: {
-                    left: "25%",
+                    left: "17%",
                     position: "absolute",
-                    top: "65%"
+                    top: "62.5%"
                   }
                 }, React.createElement(FlipButton$ReactHooksTemplate.make, {
                       dispatch: dispatch,
@@ -67,8 +67,8 @@ function App(Props) {
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                                     cardIndex: index,
                                     filePath: "./images/" + (match[0] + ".svg"),
-                                    leftVw: 50.0,
-                                    topVh: 25.0,
+                                    leftVw: 50.0 + 3.75,
+                                    topVh: 25.0 - 9.00,
                                     parentElementWidthPx: window.innerWidth,
                                     parentElementHeightPx: window.innerHeight,
                                     isFlipSide: state.northIsFlipped,
@@ -79,7 +79,7 @@ function App(Props) {
                   style: {
                     left: "50%",
                     position: "absolute",
-                    top: "40%"
+                    top: "28.5%"
                   }
                 }, React.createElement(FlipButton$ReactHooksTemplate.make, {
                       dispatch: dispatch,
@@ -90,7 +90,7 @@ function App(Props) {
                         return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
                                     cardIndex: index,
                                     filePath: "./images/" + (match[0] + ".svg"),
-                                    leftVw: 75.0,
+                                    leftVw: 75.0 + 3.75 + 8.00,
                                     topVh: 50.0,
                                     parentElementWidthPx: window.innerWidth,
                                     parentElementHeightPx: window.innerHeight,
@@ -100,9 +100,9 @@ function App(Props) {
                                   });
                       }), state.cardsEast)), React.createElement("div", {
                   style: {
-                    left: "75%",
+                    left: "83%",
                     position: "absolute",
-                    top: "65%"
+                    top: "62.5%"
                   }
                 }, React.createElement(FlipButton$ReactHooksTemplate.make, {
                       dispatch: dispatch,
