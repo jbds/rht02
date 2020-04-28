@@ -60,7 +60,7 @@ function Sidebar1(Props) {
                       for(var x = 0; x <= 51; ++x){
                         setTimeout((function (param) {
                                 return Curry._1(dispatch, /* Deal */4);
-                              }), Caml_int32.imul(60, x));
+                              }), Caml_int32.imul(50, x));
                       }
                       
                     })

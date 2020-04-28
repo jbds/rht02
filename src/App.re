@@ -5,8 +5,8 @@ let make = () => {
   // 'dispatch' will not change between re-renders
   // useReducer expects to have passed in a reducer function and an initial state
   let (state, dispatch) = React.useReducer(reducer, initialState);
-
-  <div id={"main"}>
+<div id="holder">
+  <div id="main">
     // SOUTH CARD
     <div>
       (
@@ -151,16 +151,17 @@ let make = () => {
     >
       <FlipButton dispatch location=East/>
     </div>
-    // SIDEBARS
-    <div id="sidebar1">
-      <Sidebar1 dispatch state/>
-    </div>
-    <div id="sidebar2">
-      //(s2e("Sidebar2"))
-    </div>
-    <div id="sidebar3">
-      //(s2e("Sidebar3"))
-      <Sidebar3 dispatch/>
-    </div>
   </div>
+  // SIDEBARS
+  <div id="sidebar1">
+    <Sidebar1 dispatch state/>
+  </div>
+  <div id="sidebar2">
+    //(s2e("Sidebar2"))
+  </div>
+  <div id="sidebar3">
+    //(s2e("Sidebar3"))
+    <Sidebar3 dispatch/>
+  </div>
+</div>
 };

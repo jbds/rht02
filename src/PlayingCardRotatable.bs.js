@@ -3,10 +3,6 @@
 
 var React = require("react");
 
-function f2s(prim) {
-  return prim.toString();
-}
-
 function PlayingCardRotatable(Props) {
   var cardIndex = Props.cardIndex;
   var filePath = Props.filePath;
@@ -41,26 +37,7 @@ function PlayingCardRotatable(Props) {
   }
 }
 
-var cardHeightVh = 25.0;
-
-var cardHeightOverCardWidth = 1.56;
-
-var rotationOriginYOffsetMultiplier = 4.25;
-
-var angleDeg = 3.625;
-
-var cardIndexOffset = 8.0;
-
-var baizeAsFractionOfViewportWidth = 0.8;
-
 var make = PlayingCardRotatable;
 
-exports.cardHeightVh = cardHeightVh;
-exports.cardHeightOverCardWidth = cardHeightOverCardWidth;
-exports.rotationOriginYOffsetMultiplier = rotationOriginYOffsetMultiplier;
-exports.angleDeg = angleDeg;
-exports.cardIndexOffset = cardIndexOffset;
-exports.baizeAsFractionOfViewportWidth = baizeAsFractionOfViewportWidth;
-exports.f2s = f2s;
 exports.make = make;
 /* react Not a pure module */

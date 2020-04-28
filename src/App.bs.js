@@ -14,100 +14,102 @@ function App(Props) {
   var dispatch = match[1];
   var state = match[0];
   return React.createElement("div", {
-              id: "main"
-            }, React.createElement("div", undefined, $$Array.map((function (param) {
-                        var match = param[1];
-                        var index = param[0];
-                        return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
-                                    cardIndex: index,
-                                    filePath: "./images/" + (match[0] + ".svg"),
-                                    leftVw: 50.0 + 3.75,
-                                    topVh: 75.0 + 8.00,
-                                    parentElementWidthPx: window.innerWidth,
-                                    parentElementHeightPx: window.innerHeight,
-                                    isFlipSide: state.southIsFlipped,
-                                    lifecycle: match[1],
-                                    key: String(index)
-                                  });
-                      }), state.cardsSouth)), React.createElement("div", {
-                  style: {
-                    left: "50%",
-                    position: "absolute",
-                    top: "95.5%"
-                  }
-                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
-                      dispatch: dispatch,
-                      location: /* South */2
-                    })), React.createElement("div", undefined, $$Array.map((function (param) {
-                        var match = param[1];
-                        var index = param[0];
-                        return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
-                                    cardIndex: index,
-                                    filePath: "./images/" + (match[0] + ".svg"),
-                                    leftVw: 25.0 + 3.75 - 8.00,
-                                    topVh: 50.0,
-                                    parentElementWidthPx: window.innerWidth,
-                                    parentElementHeightPx: window.innerHeight,
-                                    isFlipSide: state.westIsFlipped,
-                                    lifecycle: match[1],
-                                    key: String(index)
-                                  });
-                      }), state.cardsWest)), React.createElement("div", {
-                  style: {
-                    left: "17%",
-                    position: "absolute",
-                    top: "62.5%"
-                  }
-                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
-                      dispatch: dispatch,
-                      location: /* West */3
-                    })), React.createElement("div", undefined, $$Array.map((function (param) {
-                        var match = param[1];
-                        var index = param[0];
-                        return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
-                                    cardIndex: index,
-                                    filePath: "./images/" + (match[0] + ".svg"),
-                                    leftVw: 50.0 + 3.75,
-                                    topVh: 25.0 - 9.00,
-                                    parentElementWidthPx: window.innerWidth,
-                                    parentElementHeightPx: window.innerHeight,
-                                    isFlipSide: state.northIsFlipped,
-                                    lifecycle: match[1],
-                                    key: String(index)
-                                  });
-                      }), state.cardsNorth)), React.createElement("div", {
-                  style: {
-                    left: "50%",
-                    position: "absolute",
-                    top: "28.5%"
-                  }
-                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
-                      dispatch: dispatch,
-                      location: /* North */0
-                    })), React.createElement("div", undefined, $$Array.map((function (param) {
-                        var match = param[1];
-                        var index = param[0];
-                        return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
-                                    cardIndex: index,
-                                    filePath: "./images/" + (match[0] + ".svg"),
-                                    leftVw: 75.0 + 3.75 + 8.00,
-                                    topVh: 50.0,
-                                    parentElementWidthPx: window.innerWidth,
-                                    parentElementHeightPx: window.innerHeight,
-                                    isFlipSide: state.eastIsFlipped,
-                                    lifecycle: match[1],
-                                    key: String(index)
-                                  });
-                      }), state.cardsEast)), React.createElement("div", {
-                  style: {
-                    left: "83%",
-                    position: "absolute",
-                    top: "62.5%"
-                  }
-                }, React.createElement(FlipButton$ReactHooksTemplate.make, {
-                      dispatch: dispatch,
-                      location: /* East */1
-                    })), React.createElement("div", {
+              id: "holder"
+            }, React.createElement("div", {
+                  id: "main"
+                }, React.createElement("div", undefined, $$Array.map((function (param) {
+                            var match = param[1];
+                            var index = param[0];
+                            return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
+                                        cardIndex: index,
+                                        filePath: "./images/" + (match[0] + ".svg"),
+                                        leftVw: 50.0 + 3.75,
+                                        topVh: 75.0 + 8.00,
+                                        parentElementWidthPx: window.innerWidth,
+                                        parentElementHeightPx: window.innerHeight,
+                                        isFlipSide: state.southIsFlipped,
+                                        lifecycle: match[1],
+                                        key: String(index)
+                                      });
+                          }), state.cardsSouth)), React.createElement("div", {
+                      style: {
+                        left: "50%",
+                        position: "absolute",
+                        top: "95.5%"
+                      }
+                    }, React.createElement(FlipButton$ReactHooksTemplate.make, {
+                          dispatch: dispatch,
+                          location: /* South */2
+                        })), React.createElement("div", undefined, $$Array.map((function (param) {
+                            var match = param[1];
+                            var index = param[0];
+                            return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
+                                        cardIndex: index,
+                                        filePath: "./images/" + (match[0] + ".svg"),
+                                        leftVw: 25.0 + 3.75 - 8.00,
+                                        topVh: 50.0,
+                                        parentElementWidthPx: window.innerWidth,
+                                        parentElementHeightPx: window.innerHeight,
+                                        isFlipSide: state.westIsFlipped,
+                                        lifecycle: match[1],
+                                        key: String(index)
+                                      });
+                          }), state.cardsWest)), React.createElement("div", {
+                      style: {
+                        left: "17%",
+                        position: "absolute",
+                        top: "62.5%"
+                      }
+                    }, React.createElement(FlipButton$ReactHooksTemplate.make, {
+                          dispatch: dispatch,
+                          location: /* West */3
+                        })), React.createElement("div", undefined, $$Array.map((function (param) {
+                            var match = param[1];
+                            var index = param[0];
+                            return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
+                                        cardIndex: index,
+                                        filePath: "./images/" + (match[0] + ".svg"),
+                                        leftVw: 50.0 + 3.75,
+                                        topVh: 25.0 - 9.00,
+                                        parentElementWidthPx: window.innerWidth,
+                                        parentElementHeightPx: window.innerHeight,
+                                        isFlipSide: state.northIsFlipped,
+                                        lifecycle: match[1],
+                                        key: String(index)
+                                      });
+                          }), state.cardsNorth)), React.createElement("div", {
+                      style: {
+                        left: "50%",
+                        position: "absolute",
+                        top: "28.5%"
+                      }
+                    }, React.createElement(FlipButton$ReactHooksTemplate.make, {
+                          dispatch: dispatch,
+                          location: /* North */0
+                        })), React.createElement("div", undefined, $$Array.map((function (param) {
+                            var match = param[1];
+                            var index = param[0];
+                            return React.createElement(PlayingCardRotatable$ReactHooksTemplate.make, {
+                                        cardIndex: index,
+                                        filePath: "./images/" + (match[0] + ".svg"),
+                                        leftVw: 75.0 + 3.75 + 8.00,
+                                        topVh: 50.0,
+                                        parentElementWidthPx: window.innerWidth,
+                                        parentElementHeightPx: window.innerHeight,
+                                        isFlipSide: state.eastIsFlipped,
+                                        lifecycle: match[1],
+                                        key: String(index)
+                                      });
+                          }), state.cardsEast)), React.createElement("div", {
+                      style: {
+                        left: "83%",
+                        position: "absolute",
+                        top: "62.5%"
+                      }
+                    }, React.createElement(FlipButton$ReactHooksTemplate.make, {
+                          dispatch: dispatch,
+                          location: /* East */1
+                        }))), React.createElement("div", {
                   id: "sidebar1"
                 }, React.createElement(Sidebar1$ReactHooksTemplate.make, {
                       dispatch: dispatch,
